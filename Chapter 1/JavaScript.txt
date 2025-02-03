@@ -1,0 +1,7 @@
+JS programming language used to give instructions to the computer.
+
+Input (code) ---> computer ---> Output
+
+Alerts :
+
+alert("Hello there");
