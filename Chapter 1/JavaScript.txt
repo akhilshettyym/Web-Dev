@@ -1,4 +1,5 @@
 JS programming language used to give instructions to the computer.
+Dynamically typed language
 
 Input (code) ---> computer ---> Output
 
