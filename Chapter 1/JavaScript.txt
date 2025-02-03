@@ -1,19 +1,38 @@
-JS programming language used to give instructions to the computer.
-Dynamically typed language
+JavaScript: A Powerful Programming Language
+JavaScript is a dynamically typed programming language used to give instructions to the computer, primarily for creating interactive web applications. It is widely used in both front-end (web development) and back-end (server-side with Node.js) programming.
 
-Input (code) ---> computer ---> Output
 
-Alerts :
-alert("Hello there");
+The basic execution flow of JavaScript:
+Input (JavaScript Code) ---> Computer Processes It ---> Output (Result on Screen)
 
-Variables :
-are containers for data.
-Variables in JavaScript are used to store and manage data in a program. They act as containers for values, such as numbers, strings, or objects, which can be used and manipulated throughout your code.
 
-"=" assignment operator
+Alerts in JavaScript
+Alerts are used to display pop-up messages to users. The alert() function pauses script execution until the user dismisses it.
 
-Variables rules :
-var names are case sensitive : "a", "A" is different
-only letters, digits, underscore(_) and $ is allowed not even space
-only letter, underscore, or $ shloud be 1st char
-reversed words cannot be var
+Example: alert("Hello there!");
+
+Variables in JavaScript
+Variables are containers for data that store values such as numbers, strings, and objects. They allow data to be reused and manipulated throughout the program.
+
+Declaring Variables
+JavaScript provides three ways to declare variables:
+
+var – Old way (Function-scoped, avoid using)
+let – Block-scoped, can be reassigned
+const – Block-scoped, cannot be reassigned
+
+let name = "Akhil";  // String
+const pi = 3.14;     // Number (constant)
+var isStudent = true; // Boolean
+
+
+Assignment Operator (=)
+The = operator is used to assign values to variables.
+let age = 25; // Assigning 25 to the variable age
+
+
+fullName - Camel case
+fullname - x
+full_name - x snake case
+full-name - x kebab case
+FullName - Pascal case
