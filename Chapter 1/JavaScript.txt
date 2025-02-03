@@ -9,3 +9,11 @@ alert("Hello there");
 Variables :
 are containers for data.
 Variables in JavaScript are used to store and manage data in a program. They act as containers for values, such as numbers, strings, or objects, which can be used and manipulated throughout your code.
+
+"=" assignment operator
+
+Variables rules :
+var names are case sensitive : "a", "A" is different
+only letters, digits, underscore(_) and $ is allowed not even space
+only letter, underscore, or $ shloud be 1st char
+reversed words cannot be var
