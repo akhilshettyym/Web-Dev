@@ -3,5 +3,8 @@ JS programming language used to give instructions to the computer.
 Input (code) ---> computer ---> Output
 
 Alerts :
-
 alert("Hello there");
+
+Variables :
+are containers for data.
+Variables in JavaScript are used to store and manage data in a program. They act as containers for values, such as numbers, strings, or objects, which can be used and manipulated throughout your code.
