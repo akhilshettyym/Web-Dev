@@ -90,3 +90,31 @@ Not possible its fixed and cannot be changed.
 
 Var is a global scope variable
 let and const are block scope variables. That is { code }
+
+
+JavaScript Data Types :
+In JavaScript, data types define the kind of value a variable can hold. They are categorized into Primitive and Non-Primitive (Reference) data types.
+
+1️⃣ Primitive Data Types (Stored by Value)
+Primitive data types are immutable and stored directly in memory. They are passed by value, meaning when assigned to a new variable, a copy is made.
+
+1️⃣ Number – Represents both integers and floating-point numbers.
+let age = 25;
+
+2️⃣ String – Represents text, enclosed in quotes ("", '', ````).
+let name = "Akhil";
+
+3️⃣ Boolean – Represents true or false values.
+let isStudent = true;
+
+4️⃣ Undefined – A variable declared but not assigned a value.
+let x; // undefined
+
+5️⃣ Null – Represents an intentional empty value.
+let y = null;
+
+6️⃣ BigInt – Used for very large integers.
+let bigNum = 12345678901234567890n;
+
+7️⃣ Symbol – Represents a unique identifier (used in objects).
+let id = Symbol("id");
