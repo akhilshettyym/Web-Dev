@@ -75,3 +75,5 @@ const student = {
     cgpa: 8.56,
     isPass: true
 };
+
+console.log(student.cgpa);
