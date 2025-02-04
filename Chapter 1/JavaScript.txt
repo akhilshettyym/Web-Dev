@@ -122,7 +122,7 @@ let id = Symbol("id");
 
 
 Non-Primitive (Reference) Data Types in JavaScript
-1️⃣ Object – Collection of key-value pairs.
+1️⃣ Object – Collection of key-value pairs.  - collection of values
 let person = { name: "Akhil", age: 22 };
 
 2️⃣ Array – Ordered collection of values (indexed).

@@ -66,3 +66,12 @@ const b = 10; // Declarations must be initialized like b = 10
     let c = 30;
     console.log(c);
 }
+
+
+//Obejcts collection of different values
+const student = {
+    fullName: "Akhil Shetty M",
+    age: 22,
+    cgpa: 8.56,
+    isPass: true
+};
