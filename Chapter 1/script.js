@@ -31,7 +31,16 @@ console.log("I love javascript");
 
 
 // Keywords in JS
-let fullName = "Akhil Shetty M";
-let age = 22;
-let totalPrice = 1000;
+var fullName = "Akhil Shetty M";
+totalPrice = 1000;
 console.log(fullName);
+
+let fullNm = "Akhil Shetty M";
+
+totalPrice = 1000;
+console.log(fullName);
+
+const age = 24;
+// age = 86;
+// age = 59;
+console.log(age);
