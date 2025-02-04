@@ -118,3 +118,23 @@ let bigNum = 12345678901234567890n;
 
 7️⃣ Symbol – Represents a unique identifier (used in objects).
 let id = Symbol("id");
+
+
+
+Non-Primitive (Reference) Data Types in JavaScript
+1️⃣ Object – Collection of key-value pairs.
+let person = { name: "Akhil", age: 22 };
+
+2️⃣ Array – Ordered collection of values (indexed).
+let numbers = [1, 2, 3, 4, 5];
+
+3️⃣ Function – A block of reusable code.
+function greet() {
+    console.log("Hello!");
+}
+
+4️⃣ Date – Represents dates and times.
+let today = new Date();
+
+5️⃣ RegExp – Represents regular expressions for pattern matching.
+let pattern = /hello/;
