@@ -1,0 +1,81 @@
+form {  
+    background-color: #dedede;  
+    padding: 20px;  
+    border-radius: 10px;  
+    box-shadow: 0px 0px 10px rgba(42, 13, 13, 0.1);  
+    width: 90%;  
+    margin: auto;  
+}  
+
+label {  
+    font-weight: bold;  
+    display: block;  
+    margin: 5px 0;  
+}  
+
+input, textarea {  
+    width: 90%;  
+    padding: 10px;  
+    margin: 5px 0 10px;  
+    border: 1px solid #020202;  
+    border-radius: 5px;  
+}  
+
+button {  
+    background-color: #909090;  
+    color: white;  
+    padding: 20px 45px;  
+    border: none;  
+    border-radius: 10px;  
+    cursor: pointer;  
+    display: block;  
+    margin: auto;  
+}  
+
+button:hover {  
+    background-color: #362828;  
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #827777;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #242323c5;
+    color: white;
+}
+
+
+ul, ol {
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+    width: 90%;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul li, ol li {
+    margin: 5px 0;
+}
+
+
+footer {
+    background-color: #000000c5;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
