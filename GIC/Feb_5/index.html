@@ -25,7 +25,34 @@
         <h2>Content</h2>            <!-- Paragraph added -->
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod accusantium id similique, facilis magni laborum.</p>
         <p style="text-align: justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid hic, id placeat molestias, itaque voluptas odio nostrum ullam qui quod architecto asperiores. Est rerum quo recusandae nisi? Iste facilis eius rerum voluptas quo, dolor quisquam illo nam tempora placeat, consectetur tempore. Exercitationem dolores, sit unde similique doloribus dolorem, tempore dolore cupiditate pariatur sed natus blanditiis, incidunt reprehenderit! Eius assumenda aperiam quo harum dicta ea quasi aut ad, impedit sunt a magnam unde, repellendus explicabo nihil. Minima dolores aspernatur officia mollitia consectetur tempora ad, consequuntur qui animi culpa, maiores fugit. Saepe dolore a illum assumenda magnam ipsum, molestias animi corrupti.</p>
+
+        <h2>Contact Us</h2>
+        <form onsubmit = "return validateForm()">
+
+            <!-- Name field -->
+             <label for="name">Name:</label>
+             <input type="text", id = "name", name="name" required>
+             <br><br>
+
+             <label for="email">Email:</label>
+             <input type="email", id = "email", name="email" required>
+             <br><br>
+
+             <label for="phone">Phone:</label>
+             <input type="tel", id = "phone", name="phone" required>
+             <br><br>
+
+             <label for="message">Message:</label>
+             <textarea id = "message", name="message" required minlength="10"></textarea>
+             <br><br>
+
+             <button type="submit">Submit</button>
+
+             
+            
+            </form>
       </main>
+
 
       <!-- Footer -->
       <footer>
