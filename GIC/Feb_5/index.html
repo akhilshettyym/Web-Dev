@@ -88,10 +88,19 @@
 
      <!-- Main -->
       <main>
-        <h2>Content</h2>            
-        <!-- Paragraph added . I have used INLINE CSS in <p> -->  
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod accusantium id similique, facilis magni laborum.</p>
-        <p style="text-align: justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid hic, id placeat molestias, itaque voluptas odio nostrum ullam qui quod architecto asperiores. Est rerum quo recusandae nisi? Iste facilis eius rerum voluptas quo, dolor quisquam illo nam tempora placeat, consectetur tempore. Exercitationem dolores, sit unde similique doloribus dolorem, tempore dolore cupiditate pariatur sed natus blanditiis, incidunt reprehenderit! Eius assumenda aperiam quo harum dicta ea quasi aut ad, impedit sunt a magnam unde, repellendus explicabo nihil. Minima dolores aspernatur officia mollitia consectetur tempora ad, consequuntur qui animi culpa, maiores fugit. Saepe dolore a illum assumenda magnam ipsum, molestias animi corrupti.</p><br>
+        
+        
+        <div class="content-container" style="display: flex; align-items: center; gap: 20px;">
+            <div class="text-content" style="flex: 1;">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus sequi rem odio fugit fugiat. Aperiam, aliquid ab optio soluta obcaecati voluptates voluptatibus nisi excepturi tempora, earum aspernatur eligendi eum ducimus.</p>
+                <p style="text-align: justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid hic, id placeat molestias, itaque voluptas odio nostrum ullam qui quod architecto asperiores. Est rerum quo recusandae nisi? Iste facilis eius rerum voluptas quo, dolor quisquam illo nam tempora placeat, consectetur tempore. Exercitationem dolores, sit unde similique doloribus dolorem, tempore dolore cupiditate pariatur sed natus blanditiis, incidunt reprehenderit! Eius assumenda aperiam quo harum dicta ea quasi aut ad, impedit sunt a magnam unde, repellendus explicabo nihil. Minima dolores aspernatur officia mollitia consectetur tempora ad, consequuntur qui animi culpa, maiores fugit. Saepe dolore a illum assumenda magnam ipsum, molestias animi corrupti.</p>
+            </div>
+        
+            <div class="image-content" style="flex-shrink: 0;">
+                <img src="Image.jpeg" alt="pocket tel" style="width: 300px; height: auto; border-radius: 10px;">
+            </div>
+        </div>
+        
 
         <h2>Contact Us :</h2><br>
         <form onsubmit="return validateForm()">
