@@ -27,30 +27,63 @@
         <p style="text-align: justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid hic, id placeat molestias, itaque voluptas odio nostrum ullam qui quod architecto asperiores. Est rerum quo recusandae nisi? Iste facilis eius rerum voluptas quo, dolor quisquam illo nam tempora placeat, consectetur tempore. Exercitationem dolores, sit unde similique doloribus dolorem, tempore dolore cupiditate pariatur sed natus blanditiis, incidunt reprehenderit! Eius assumenda aperiam quo harum dicta ea quasi aut ad, impedit sunt a magnam unde, repellendus explicabo nihil. Minima dolores aspernatur officia mollitia consectetur tempora ad, consequuntur qui animi culpa, maiores fugit. Saepe dolore a illum assumenda magnam ipsum, molestias animi corrupti.</p>
 
         <h2>Contact Us</h2>
-        <form onsubmit = "return validateForm()">
+        <form onsubmit="return validateForm()">
 
             <!-- Name field -->
-             <label for="name">Name:</label>
-             <input type="text", id = "name", name="name" required>
-             <br><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
 
-             <label for="email">Email:</label>
-             <input type="email", id = "email", name="email" required>
-             <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
 
-             <label for="phone">Phone:</label>
-             <input type="tel", id = "phone", name="phone" required>
-             <br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <br><br>
 
-             <label for="message">Message:</label>
-             <textarea id = "message", name="message" required minlength="10"></textarea>
-             <br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required minlength="10"></textarea>
+            <br><br>
 
-             <button type="submit">Submit</button>
+            <button type="submit">Submit</button>
 
-             
+        </form>
+
+
+             <script>
+                function validateForm(){
+                    let name = document.getElementById("name").value;
+                    let email = document.getElementById("email").value;
+                    let phone = document.getElementById("phone").value;
+                    let message = document.getElementById("message").value;
+
+                    //Name validation
+                    let nameRegex = /^[A-Za-z ]+$/;
+                    if (!nameRegex.test(name)){
+                        alert("Please enter a valid name (Letters only)");
+                        return false;
+                    }
+
+                    //phone validation
+                    let phoneRegex = /^[0-9]+$/;
+                    if (!phoneRegex.test(phone)){
+                        alert("Please enter a valid mobile number (Numbers only)");
+                        return false;
+                    }
+
+                    //Message validation 
+                    if (message.length < 10){
+                        alert("The message must be atleast 10 characters long");
+                        return false;
+                    }
+
+                    alert("Form Submitted Successfully !!!");
+                    return true;
+                }
+             </script>
             
-            </form>
+            
       </main>
 
 
