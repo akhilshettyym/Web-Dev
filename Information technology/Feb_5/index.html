@@ -36,18 +36,18 @@
 
 
         nav {
+            display: flex;
+            justify-content: center; /* Centers the nav links */
             background-color: #1716167d;
-            text-align: center;
             padding: 10px;
+            gap: 15px;
         }
 
         nav a {
             font-size: 20px;
-            font-variant: normal;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
-            margin: 0 10px;
         }
 
         nav a:hover {
@@ -68,6 +68,27 @@
             font-size: 0.48cm;
             line-height: 2.0;
         }
+
+        .content-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        .image-content {
+            flex-shrink: 0;
+        }
+
+        .image-content img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+
     </style>
 
 </head>
