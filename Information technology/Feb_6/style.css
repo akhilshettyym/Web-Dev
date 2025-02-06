@@ -10,9 +10,17 @@ header div {
     background-color: #ffffff;
     padding: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     gap: 10px;
+}
+
+header div input {
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    width: 40%;
 }
 
 nav{
