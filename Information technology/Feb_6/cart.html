@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #003366;
+            color: white;
+        }
+        input[type="number"] {
+            width: 50px;
+            text-align: center;
+        }
+        .checkout-btn {
+            background-color: #b40000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .checkout-btn:hover {
+            background-color: #441818;
+        }
+    </style>
+</head>
+<body>
+    <h2>SHOPPING CART</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="cart-body">
+            <tr>
+                <td>Product 1</td>
+                <td><input type="number" value="1" min="1" onchange="updateTotal(this)"></td>
+                <td class="price">$10</td>
+                <td class="total">$10</td>
+            </tr>
+            <tr>
+                <td>Product 2</td>
+                <td><input type="number" value="2" min="1" onchange="updateTotal(this)"></td>
+                <td class="price">$15</td>
+                <td class="total">$30</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Grand Total: <span id="grand-total">$40</span></h3>
+    <button class="checkout-btn">Checkout</button>
+
+    <script>
+        function updateTotal(input) {
+            let row = input.parentElement.parentElement;
+            let price = parseFloat(row.querySelector(".price").innerText.replace("$", ""));
+            let quantity = parseInt(input.value);
+            let totalCell = row.querySelector(".total");
+            let total = price * quantity;
+            totalCell.innerText = "$" + total;
+            updateGrandTotal();
+        }
+
+        function updateGrandTotal() {
+            let grandTotal = 0;
+            document.querySelectorAll(".total").forEach(totalCell => {
+                grandTotal += parseFloat(totalCell.innerText.replace("$", ""));
+            });
+            document.getElementById("grand-total").innerText = "$" + grandTotal;
+        }
+    </script>
+</body>
+</html>
