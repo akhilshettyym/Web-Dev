@@ -1,4 +1,3 @@
-/* General Styling */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -6,7 +5,7 @@ body {
     text-align: center;
 }
 
-/* Header */
+
 header h1 {
     text-align: center;
 }
@@ -31,7 +30,7 @@ header div button {
     width: 10%;
 }
 
-/* Navigation */
+
 nav {
     background-color: #003366;
     color: white;
@@ -53,7 +52,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Main Content */
+
 main {
     padding: 10px;
 }
@@ -66,7 +65,7 @@ section {
     border-radius: 5px;
 }
 
-/* Buttons */
+
 button {
     background-color: #b40000;
     color: white;
@@ -80,7 +79,7 @@ button:hover {
     background-color: #441818;
 }
 
-/* Product Grid */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -118,7 +117,7 @@ button:hover {
     margin-top: auto;
 }
 
-/* Equipment Grid */
+
 .equipment-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -133,7 +132,7 @@ button:hover {
     border-radius: 8px;
 }
 
-/* Product Detail */
+
 .product-detail {
     display: flex;
     justify-content: center;
@@ -184,7 +183,7 @@ button:hover {
     margin: 10px 1%;
 }
 
-/* Responsive Layout */
+
 @media (max-width: 768px) {
     .product-detail {
         flex-direction: column;
@@ -198,7 +197,7 @@ button:hover {
     }
 }
 
-/* Related Products */
+
 .related-products {
     padding: 20px;
     background-color: #f9f9f9;
@@ -218,7 +217,7 @@ button:hover {
     padding: 20px;
 }
 
-/* Contact Info */
+
 .contact-info {
     display: flex;
     justify-content: space-around;
@@ -242,7 +241,7 @@ button:hover {
     margin: 0;
 }
 
-/* Form */
+
 form {
     background-color: #dedede;
     padding: 20px;
@@ -274,7 +273,7 @@ form button {
 
 
 
-/* Footer */
+
 footer {
     background-color: #003366;
     color: white;
