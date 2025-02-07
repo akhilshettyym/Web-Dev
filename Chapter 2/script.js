@@ -16,3 +16,11 @@ a++;
 console.log("a =", a);
 a--;
 console.log("a =", a);
+
+//Pre-Inrement
+let c = 1;
+console.log("++c =", ++c);
+//Post-Inrement
+let d = 1;
+console.log("d++ =", d++);
+console.log("d =", d);
