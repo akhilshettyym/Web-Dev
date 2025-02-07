@@ -33,3 +33,12 @@ else {
     color_1 = "white";
 }
 console.log(color_1);
+
+//Odd or Even
+let num = 10;
+if (num % 2 === 0 ) {
+    console.log("Number is even");
+}
+else {
+    console.log("Number is odd");
+}
