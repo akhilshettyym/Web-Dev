@@ -24,3 +24,14 @@ console.log("++c =", ++c);
 let d = 1;
 console.log("d++ =", d++);
 console.log("d =", d);
+
+
+//Assignment operators
+let e = 5;
+let f = 2;
+e += 4;
+console.log("e =", e);
+e -= 4;
+console.log("e =", e);
+e %= 4;
+console.log("e =", e);
