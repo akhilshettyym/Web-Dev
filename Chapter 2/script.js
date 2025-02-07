@@ -54,3 +54,18 @@ console.log("i === j =", i === j);      //Used to check strictly that is it chec
 console.log("i == k =", i == k);
 console.log("i !== j =", i !== j);
 console.log("i > j =", i > j);
+
+
+//Logical Operators
+// Logical AND(&), Logical OR (||), Logical NOT (!)
+let l = 5;
+let m = 2;
+let n = 0;
+let cond1 = l > m;      //true
+let cond2 = l === 6;    //true
+let cond3 = n > m;      //false
+console.log("cond1 && cond2 =", cond1 && cond2); //If both the conditions are true then returns true
+
+console.log("cond1 || cond2 =", cond1 || cond2); // Even if one condition is true then returns true
+
+console.log("i > j =", (!i > j));
