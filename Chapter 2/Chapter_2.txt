@@ -77,3 +77,16 @@ Operator	Description	Example	Result
 &&	AND (both true)	true && false	false
 `		`	OR (one true)
 !	NOT (negation)	!true	false
+
+
+Post Increment
+Post Increment is a type of increment operator that increments the value of a variable after it has been used
+Example:
+let x = 5;
+console.log(x++); // prints 5
+
+Pre Increment
+Pre Increment is a type of increment operator that increments the value of a variable before it is used
+Example:
+let x = 5;
+console.log(++x); // prints 6
