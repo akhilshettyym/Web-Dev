@@ -52,3 +52,19 @@ if (ag >= 18) {
 } else {
     console.log("Youth");
 }
+
+//Dark mode
+let mod = "dark";
+let col;
+
+if (mod === "dark") {
+    col = "black";
+} else if (mod === "blue"){
+    col = "blue";
+} else if (mod === "grey"){
+    col = "grey";
+} else {
+    col = "white";
+}
+
+console.log("col")
