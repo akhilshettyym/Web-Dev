@@ -68,3 +68,11 @@ if (mod === "dark") {
 }
 
 console.log("col")
+
+
+//Ternary operator
+// condition ? true output : false output Compact or simple if-else
+let agee = 20
+let result = agee >= 18 ? "adult" : "not adult";
+agee >= 18 ? console.log("adult") : console.log("not adult");
+console.log(result);
