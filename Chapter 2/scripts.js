@@ -76,3 +76,20 @@ let agee = 20
 let result = agee >= 18 ? "adult" : "not adult";
 agee >= 18 ? console.log("adult") : console.log("not adult");
 console.log(result);
+
+
+//Switch statements
+const expr = 'Papayas';
+switch(expr) {
+    case 'Oranges':
+        console.log('Oranges are not that sweet.');
+        break;
+    case 'Mangoes':
+        console.log('Mangoes are also not that sweet.');
+        break;
+    case 'Papayas':
+        console.log('Papayas are sweet and tasty.');
+        break;
+    default:
+        console.log(`Sorry !!! No papayas here! out of ${expr}`);
+}
