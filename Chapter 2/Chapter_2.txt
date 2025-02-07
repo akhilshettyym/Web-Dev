@@ -1,0 +1,33 @@
+Comments in JavaScript
+Comments in JavaScript are used to explain code, improve readability, and temporarily disable parts of the code. JavaScript ignores comments during execution.
+
+1️⃣ Single-Line Comments (//)
+Used for brief explanations or to disable a single line of code.
+Starts with // and extends to the end of the line.
+
+// This is a single-line comment
+console.log("Hello, World!"); // Prints to the console
+
+// let name = "John"; // This line is commented out and won't execute
+console.log("JavaScript Comments"); 
+
+2️⃣ Multi-Line Comments (/ /)
+Used for detailed explanations spanning multiple lines.
+Starts with /* and ends with */.
+
+/* 
+   This is a multi-line comment.
+   It can be used to explain complex logic 
+   or temporarily disable multiple lines of code.
+*/
+console.log("This will run"); 
+
+/*
+console.log("This will not run");
+console.log("Because it's inside a multi-line comment");
+*/
+
+3️⃣ Uses of Comments in JavaScript
+✅ Code Documentation – Helps developers understand the code.
+✅ Debugging – Temporarily disable parts of the code.
+✅ Collaboration – Useful when working in teams to describe logic.
