@@ -42,3 +42,13 @@ if (num % 2 === 0 ) {
 else {
     console.log("Number is odd");
 }
+
+//ELSE IF statements
+let ag = 19;
+if (ag >= 18) {
+    console.log("Junior");
+} else if (ag >= 60){
+    console.log("Senior");
+} else {
+    console.log("Youth");
+}
