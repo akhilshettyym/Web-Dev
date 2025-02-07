@@ -35,3 +35,22 @@ e -= 4;
 console.log("e =", e);
 e %= 4;
 console.log("e =", e);
+
+
+//Comparison operators
+let g = 5;
+let h = 2;
+console.log("g == h =", g == h);
+console.log("g != h =", g != h);
+console.log("g > h =", g > h);
+console.log("g < h =", g < h);
+console.log("g >= h =", g >= h);
+console.log("g <= h =", g <= h);
+
+let i = 5;
+let j = 2;
+let k = "5";
+console.log("i === j =", i === j);      //Used to check strictly that is it checks the data types as well which == won't
+console.log("i == k =", i == k);
+console.log("i !== j =", i !== j);
+console.log("i > j =", i > j);
