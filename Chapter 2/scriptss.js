@@ -25,3 +25,22 @@ else if (score >= 50 && score <= 59) {
 else {
     console.log("Grade F");
 }
+
+//Write a code which can give grades to students according to their scores
+let score_ = prompt("Enter your score: ");
+if (score_ >= 90 && score_ <= 100) {
+    console.log("Grade A");
+    }
+    else if (score_ >= 70 && score_ <= 89) {
+        console.log("Grade B");
+        }
+        else if (score_ >= 60 && score_ <= 69) {
+            console.log("Grade C");
+            }
+            else if (score_ >= 50 && score_ <= 59) {
+                console.log("Grade D");
+                }
+                else {
+                    console.log("Grade F");
+                    }
+                    
