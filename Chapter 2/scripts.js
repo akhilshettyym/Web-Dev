@@ -93,3 +93,15 @@ switch(expr) {
     default:
         console.log(`Sorry !!! No papayas here! out of ${expr}`);
 }
+
+//Switch with multiple cases
+const fruit = 'apple';
+switch (fruit) {
+    case 'apple':
+        case 'banana':
+            console.log('You like fruit!');
+            break;
+            default:
+                console.log('You do not like fruit');
+                break;
+                }

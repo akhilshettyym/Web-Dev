@@ -43,4 +43,3 @@ if (score_ >= 90 && score_ <= 100) {
                 else {
                     console.log("Grade F");
                     }
-                    
