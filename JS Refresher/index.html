@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Refresher</title>
+    <script>
+        "use strict";
+        let a = 34;
+        let b = "This is me AKHIL";
+        console.log(a);
+        console.log(b);
+
+        function hello(){
+            console.log("Hello World");
+        }
+
+        let c = {
+            r : 30,
+            m : 40,
+            func: function myfunc(number){
+                console.log("The number is :" + number);
+            }
+        } // this is an object - c.r = 30
+
+        document.addEventListener("click", function click(){
+            console.log("clicked");
+            //alert("Hello");
+            let conf = confirm("Are you sure ?");
+            console.log(conf);
+        })
+
+
+        let arr = [34, 56, 75, 99];
+        console.log(this);
+        function myfunc (number){
+            console.log("The number is " +this);
+        }
+        myfunc();
+
+        let arr_2 = [34, 56, 75, 99];
+        let myfunct = (number) => {
+            console.log("The number is " +this);
+        }
+        myfunct();
+        
+
+    let mobj = {
+        myfunct : (number) => {
+            console.log("The number is " +this);
+        }
+    }
+    mobj.myfunct();
+
+
+
+    let mj = {
+        a : this,
+        myfun : function(number) { 
+            console.log(this);
+        }
+    }
+    mj.myfun();
+    console.log(mj.a);
+    setTimeout(() => {
+        console.log("Yayyy");
+    }), 10000;
+    console.log("I am a script below");
+
+    </script>
+</head>
+<body>
+    <h1>I am learning JS</h1>
+</body>
+</html>
