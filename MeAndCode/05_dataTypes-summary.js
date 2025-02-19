@@ -21,13 +21,44 @@
 //   6️⃣ Symbol
 //   7️⃣ BigInt
 
-// Example of Symbol (Used for unique identifiers)
+// -----------------------------------------------------
+// ✅ Example of All Primitive Data Types
+// -----------------------------------------------------
+
+// 1️⃣ **String** - Represents text enclosed in quotes
+let firstName = "Akhil";
+console.log(typeof firstName); // ✅ "string"
+
+// 2️⃣ **Number** - Represents both integers and floating-point numbers
+let age = 22;
+let price = 99.99;
+console.log(typeof age);  // ✅ "number"
+console.log(typeof price);  // ✅ "number"
+
+// 3️⃣ **Boolean** - Represents `true` or `false`
+let isStudent = true;
+console.log(typeof isStudent); // ✅ "boolean"
+
+// 4️⃣ **Null** - Represents an **intentional empty value**
+let emptyValue = null;
+console.log(typeof emptyValue); // ❌ "object" (This is a known JavaScript bug)
+
+// 5️⃣ **Undefined** - A variable that has been declared but not assigned a value
+let notAssigned;
+console.log(typeof notAssigned); // ✅ "undefined"
+
+// 6️⃣ **Symbol** - Represents unique values (Used for object properties)
 const id = Symbol('123');
 const anotherId = Symbol('123');
-
 console.log(id === anotherId); // ❌ false (Symbols are always unique)
+console.log(typeof id); // ✅ "symbol"
+
+// 7️⃣ **BigInt** - Used for very large integers
+const bigNumber = 12345678901234567890n;
+console.log(typeof bigNumber); // ✅ "bigint"
 
 
+// -----------------------------------------------------
 // 🔴 **Non-Primitive (Reference) Data Types** (Call by Reference)
 // - These are stored in memory with a reference, meaning they are **not copied** when assigned to another variable.
 // - JavaScript has **4 main non-primitive types**:
@@ -36,30 +67,43 @@ console.log(id === anotherId); // ❌ false (Symbols are always unique)
 //   3️⃣ Functions
 //   4️⃣ Maps and Sets
 
-// Example of an Array (Non-primitive)
-const heros = ["Shaktiman", "Captain", "Shivaji"]; 
+// -----------------------------------------------------
+// ✅ Example of All Non-Primitive Data Types
+// -----------------------------------------------------
 
-// Example of an Object (Non-primitive)
-let myobj = {
+// 1️⃣ **Arrays** - Collection of values
+const fruits = ["Apple", "Banana", "Cherry"];
+console.log(typeof fruits); // ✅ "object"
+
+// 2️⃣ **Objects** - Key-value pairs
+let person = {
     name: "Akhil",
     age: 22,
-}
+    city: "Mangalore"
+};
+console.log(typeof person); // ✅ "object"
 
-// Example of a Function (Non-primitive)
-const myFunction = function (){
-    console.log("Hello World");
-}
+// 3️⃣ **Functions** - Used to perform operations
+const greet = function () {
+    console.log("Hello, World!");
+};
+console.log(typeof greet); // ✅ "function"
+
+// 4️⃣ **Maps** - Collection of key-value pairs where keys can be any type
+const userMap = new Map();
+userMap.set("name", "Akhil");
+userMap.set("age", 22);
+console.log(userMap);
+console.log(typeof userMap); // ✅ "object"
+
+// 5️⃣ **Sets** - Collection of unique values
+const uniqueNumbers = new Set([1, 2, 3, 4, 1, 2]);
+console.log(uniqueNumbers); // ✅ {1, 2, 3, 4}
+console.log(typeof uniqueNumbers); // ✅ "object"
+
 
 // -----------------------------------------------------
-// 🔹 Checking the Type of a Variable
-// -----------------------------------------------------
-console.log(typeof heros);      // ✅ "object" (Arrays are a special kind of object)
-console.log(typeof myobj);      // ✅ "object"
-console.log(typeof myFunction); // ✅ "function" (Functions are technically objects)
-console.log(typeof id);         // ✅ "symbol"
-
-// -----------------------------------------------------
-// 🔥 Key Differences Between Primitive and Non-Primitive Data Types
+// 🔹 Key Differences Between Primitive and Non-Primitive Data Types
 // -----------------------------------------------------
 
 /*
