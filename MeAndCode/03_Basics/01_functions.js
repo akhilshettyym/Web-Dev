@@ -1,11 +1,4 @@
-// Funtions
-
-// console.log("A");
-// console.log("K");
-// console.log("H");
-// console.log("I");
-// console.log("L");
-
+// 1️⃣ Function Declaration & Execution
 function sayMyName() {
     console.log("A");
     console.log("K");
@@ -13,63 +6,46 @@ function sayMyName() {
     console.log("I");
     console.log("L");
 }
-// sayMyName();       // sayMyName - reference and () - execution
+sayMyName();  // Function Execution
 
-// function addTwoNumbers(num1, num2){     //num1 and num2 are parameters
-//     console.log(num1 + num2);
-// }
-
-
-
-function addTwoNumbers(num1, num2){     //num1 and num2 are parameters
+// 2️⃣ Function with Parameters & Return Value
+function addTwoNumbers(num1, num2) {    
     let result = num1 + num2;
     return result;
-    console.log("Akhil");               // will never be printed.
 }
-const result = addTwoNumbers(3, 4);     // here 3 and 4 are arguements or values
-// console.log("Results: ", result);
+const result = addTwoNumbers(3, 4);  // 3 and 4 are arguments
+console.log("Results:", result);      // Output: Results: 7
 
-function loginUserMessage(username){
-    // if(username === undefined){
-    if(!username){
-        // console.log("Please enter your username");
-        return
-    }
-    return `${username} just logged in`
+// 3️⃣ Default Parameters & Handling Undefined Input
+function loginUserMessage(username = "Guest") {
+    return `${username} just logged in`;
 }
-// console.log(loginUserMessage("Akhil"));
+console.log(loginUserMessage("Akhil"));  // Output: Akhil just logged in
+console.log(loginUserMessage());         // Output: Guest just logged in
 
-
-function calculateCartPrice(...num1){         // ... rest operator 
-    return num1
+// 4️⃣ Rest Operator (...) - Handling Multiple Arguments
+function calculateCartPrice(...num1) {    
+    return num1;
 }
-// console.log(calculateCartPrice(200, 400, 500));
+console.log(calculateCartPrice(200, 400, 500));  // Output: [200, 400, 500]
 
-
+// 5️⃣ Function with Objects
 const user = {
     name: "Akhil",
-    age: 25,
-    occupation: "Software Engineer"
-}
-const user2 = {
-    name: "Shetty",
-    age: 22,
-    occupation: "Engineer"
+    age: 25
 }
 
-function handleObject(anyObject){
+function handleObject(anyObject) {
     console.log(`Username is ${anyObject.name} and age is ${anyObject.age}`);
 }
+handleObject(user);    // Output: Username is Akhil and age is 25
+handleObject({ name: "Khushi", age: 35 });  // Passing an inline object
 
-// handleObject(user);
-handleObject({
-    name: "Khushi",
-    age: 35
-})
-
+// 6️⃣ Function with Arrays
 const myNewArray = [200, 400, 100, 600];
-function returnSecondVlaue(getArray){
-    return getArray[1];
+
+function returnSecondValue(getArray) {
+    return getArray[1];  // Returns the second element of the array
 }
-// console.log(returnSecondVlaue(myNewArray));
-console.log(returnSecondVlaue([100, 200, 300, 400]));
+console.log(returnSecondValue(myNewArray));  // Output: 400
+console.log(returnSecondValue([100, 200, 300, 400]));  // Output: 200
