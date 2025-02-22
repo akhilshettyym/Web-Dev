@@ -82,3 +82,4 @@ console.log(addTwo(5)); // Works after declaration (Outputs: 7)
 // - Function Declarations are hoisted, meaning they can be called before their definition.
 // - Function Expressions are not hoisted, so they must be declared before use.
 // - Lexical Scope: Inner functions can access outer function variables, but not vice versa.
+// - Block Scope: Variables declared with let, const, or var are only accessible within their block
