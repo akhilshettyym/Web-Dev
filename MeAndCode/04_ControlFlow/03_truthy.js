@@ -1,28 +1,57 @@
-// Truthy
+// Example of Truthy & Falsy values
 
-const userEmail = "akhil@google";
-// const userEmail = "";
-// const userEmail = []];
+// Uncomment different values of `userEmail` to test
+const userEmail = "akhil@google";  // Truthy
+// const userEmail = "";           // Falsy (empty string)
+// const userEmail = [];           // Truthy (empty array)
 
-if (userEmail){
-    console.log("Got the user userEmail...");
-}else{
-    console.log("User Email is not available...");
+if (userEmail) {
+    console.log("✅ Got the user email...");
+} else {
+    console.log("❌ User Email is not available...");
 }
 
-/* flasy values
-* false, 0, -0, "", BigInt, "", null, undefined, NaN
+/*
+🔹 Falsy Values in JavaScript:
+- false
+- 0, -0
+- "" (empty string)
+- null
+- undefined
+- NaN (Not-a-Number)
 
-* truthy values
-* true, 1, "akhil", [], {}, function(){}, 3.14, 'false'
+🔹 Truthy Values in JavaScript:
+- true
+- 1, -1, 100, 3.14 (any non-zero number)
+- "akhil" (any non-empty string)
+- [] (empty array)
+- {} (empty object)
+- function() {} (any function)
 */
 
-// if (userEmail.length === 0) {
-//     console.log("User Email is not available...");
-// }
+// Checking if an array is empty
+const userArray = [];
+if (userArray.length === 0) {
+    console.log("❌ User array is empty...");
+} else {
+    console.log("✅ User array has values...");
+}
 
-const emptyObj = {}
+// Checking if an object is empty
+const emptyObj = {}; 
+if (Object.keys(emptyObj).length === 0) {
+    console.log("❌ Object is empty...");
+} else {
+    console.log("✅ Object has properties...");
+}
 
-if (Object.keys(emptyObj).length === 0){
-    console.log("Object is empty...");
+// Example of truthy behavior with functions
+function myFunction() {
+    return "Hello!";
+}
+
+if (myFunction) {
+    console.log("✅ Function is truthy...");
+} else {
+    console.log("❌ Function is falsy...");
 }
