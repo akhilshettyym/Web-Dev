@@ -2,13 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <title>DOM (Document Object model)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+
+    <style>
+        .bg-black {
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
-<body>
-    <div class = "bg-black">
-        <h1 class = "heading">DOM learnings</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, velit?</p>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM Learnings <span>test text</span></h1>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, velit?</p>
+
+        <ul>
+            <li class="list-item">Item 1</li>
+            <li class="list-item">Item 2</li>
+            <li class="list-item">Item 3</li>
+        </ul>
     </div>
+
+    <script>
+        // Get an element by ID
+        const title = document.getElementById("title");
+        console.log("getElementById:", title.innerText);
+
+        // Get elements by class name (returns an HTMLCollection)
+        const headings = document.getElementsByClassName("heading");
+        console.log("getElementsByClassName:", headings[0].innerText);
+
+        // Get elements by tag name (returns an HTMLCollection)
+        const h2Elements = document.getElementsByTagName("h2");
+        console.log("getElementsByTagName:", h2Elements.length, "h2 elements found");
+
+        // Get an element using querySelector (returns the first match)
+        const firstListItem = document.querySelector(".list-item");
+        console.log("querySelector:", firstListItem.innerText);
+
+        // Get all elements using querySelectorAll (returns a NodeList)
+        const allListItems = document.querySelectorAll(".list-item");
+        console.log("querySelectorAll:", allListItems.length, "list items found");
+
+        // Get an element by its attribute (example: selecting by ID)
+        const paragraph = document.querySelector("[id='para']");
+        console.log("getElementByAttribute (querySelector by ID):", paragraph.innerText);
+
+        // Demonstrating innerText, innerHTML, and textContent
+        console.log("innerText:", title.innerText); // Only visible text
+        console.log("innerHTML:", title.innerHTML); // Includes HTML tags inside the element
+        console.log("textContent:", title.textContent); // Includes all text (including hidden)
+
+        // Modifying the DOM
+        title.innerText = "Updated DOM Learnings"; // Updates text content
+        paragraph.innerHTML = "<strong>Updated paragraph with bold text.</strong>"; // Changes inner HTML
+    </script>
 </body>
 </html>
