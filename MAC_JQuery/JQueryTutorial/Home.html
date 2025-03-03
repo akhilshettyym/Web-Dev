@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Importing jQuery library from Google's CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        
+
+        // Ensures the script runs only after the document is fully loaded
+        $(document).ready(function() {
+            // When any <p> (paragraph) element is clicked, it will hide itself
+            $("p").click(function() {
+                $(this).hide(); // Hides the clicked paragraph
+            });
+        });
+
+
+        // Another document ready function (though ideally, you should combine them)
+        $(document).ready(function() {
+            // When any <h1> (heading) element is clicked, it will hide itself
+            $("h1").click(function() {
+                $(this).hide(); // Hides the clicked heading
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+
+    <!-- Clicking on this heading will make it disappear -->
+    <h1>I am Akhil</h1>
+
+    <!-- Clicking on any of these paragraphs will make them disappear -->
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p>Click me too!</p>
+
+</body>
+</html>
+
+<!-- 
+
+Explanation:
+- jQuery is a JavaScript library that simplifies DOM manipulation, event handling, and animations.
+- The `$(document).ready()` function ensures that the script executes only after the DOM is fully loaded.
+- The `$("p").click()` function binds a click event to all <p> elements, hiding the clicked element.
+- The `$("h1").click()` function binds a click event to all <h1> elements, hiding the clicked element.
+- Multiple `$(document).ready()` calls can be combined into one for better efficiency.
+
+-->
