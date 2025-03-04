@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Event Methods Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+        /* click()
+        The click() method attaches an event handler function to an HTML element.
+        The function is executed when the user clicks on the HTML element.
+        The following example says: When a click event fires on a <p> element, hide the current <p> element. */
+        $("p").click(function(){
+            $(this).hide();
+        });
+
+        /* dblclick()
+        The dblclick() method attaches an event handler function to an HTML element.
+        The function is executed when the user double-clicks on the HTML element. */
+        $("h1").dblclick(function(){
+            $(this).hide();
+        });
+
+        /* mouseenter()
+        The mouseenter() method attaches an event handler function to an HTML element.
+        The function is executed when the mouse pointer enters the HTML element. */
+        $("#p1").mouseenter(function(){
+            alert("You entered p1!");
+        });
+
+        /* mouseleave()
+        The mouseleave() method attaches an event handler function to an HTML element.
+        The function is executed when the mouse pointer leaves the HTML element. */
+        $("#p1").mouseleave(function(){
+            alert("Bye! You now leave p1!");
+        });
+
+        /* mousedown()
+        The mousedown() method attaches an event handler function to an HTML element.
+        The function is executed when the left, middle, or right mouse button is pressed down. */
+        $("#p1").mousedown(function(){
+            alert("Mouse down over p1!");
+        });
+
+        /* mouseup()
+        The mouseup() method attaches an event handler function to an HTML element.
+        The function is executed when the left, middle, or right mouse button is released. */
+        $("#p1").mouseup(function(){
+            alert("Mouse up over p1!");
+        });
+
+        /* hover()
+        The hover() method takes two functions and is a combination of mouseenter() and mouseleave().
+        The first function executes when the mouse enters, and the second executes when the mouse leaves. */
+        $("#p1").hover(function(){
+            alert("You entered p1!");
+        }, function(){
+            alert("Bye! You now leave p1!");
+        });
+
+        /* focus()
+        The focus() method attaches an event handler function to an HTML form field.
+        The function is executed when the form field gets focus. */
+        $("input").focus(function(){
+            $(this).css("background-color", "#cccccc");
+        });
+
+        /* blur()
+        The blur() method attaches an event handler function to an HTML form field.
+        The function is executed when the form field loses focus. */
+        $("input").blur(function(){
+            $(this).css("background-color", "#ffffff");
+        });
+        
+
+        /*The on() Method
+        The on() method attaches one or more event handlers for the selected elements
+        Attach a click event to a <p> element:*/
+        $("p").on("click", function(){
+            $(this).hide();
+            });
+
+    });
+
+    </script>
+</head>
+<body>
+
+    <h1>If you double-click on me, I will disappear.</h1>
+
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p>Click me too!</p>
+
+    <p id="p1">Enter this paragraph.</p>
+
+    <input type="text" placeholder="Focus on me">
+
+</body>
+</html>
