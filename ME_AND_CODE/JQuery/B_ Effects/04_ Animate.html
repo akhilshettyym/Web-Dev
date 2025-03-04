@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animation Effects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        /* Simple animate() 
+        Moves the div 250px to the right when the button is clicked */
+        $("#moveRight").click(function(){
+            $("#box").animate({left: '250px'});
+        });
+
+        /* Animating Multiple Properties
+        Changes the box's position, opacity, height, and width */
+        $("#multiAnimate").click(function(){
+            $("#box").animate({
+                left: '250px',
+                opacity: '0.5',
+                height: '150px',
+                width: '150px'
+            });
+        });
+
+        /* Using Relative Values 
+        Increases height and width relative to current size */
+        $("#relativeAnimate").click(function(){
+            $("#box").animate({
+                left: '+=50px',
+                height: '+=50px',
+                width: '+=50px'
+            });
+        });
+
+        /* Using Predefined Values 
+        Toggles the height of the box */
+        $("#toggleHeight").click(function(){
+            $("#box").animate({height: 'toggle'});
+        });
+
+        /* Queue Animation Effect 
+        Animations execute one after another */
+        $("#queueAnimate").click(function(){
+            var div = $("#box");
+            div.animate({height: '300px', opacity: '0.4'}, "slow");
+            div.animate({width: '300px', opacity: '0.8'}, "slow");
+            div.animate({height: '100px', opacity: '0.4'}, "slow");
+            div.animate({width: '100px', opacity: '0.8'}, "slow");
+        });
+
+        /* Move and Increase Font Size */
+        $("#moveAndFont").click(function(){
+            var div = $("#box");
+            div.animate({left: '100px'}, "slow");
+            div.animate({fontSize: '2em'}, "slow");
+        });
+
+    });
+    </script>
+    <style>
+        /* Styling for the box */
+        #box {
+            position: relative;
+            background-color: lightblue;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 1em;
+            border: 2px solid blue;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>jQuery Animation Effects</h2>
+
+    <!-- Buttons to trigger different animations -->
+    <button id="moveRight">Move Right</button>
+    <button id="multiAnimate">Multiple Animations</button>
+    <button id="relativeAnimate">Relative Animation</button>
+    <button id="toggleHeight">Toggle Height</button>
+    <button id="queueAnimate">Queue Animation</button>
+    <button id="moveAndFont">Move & Increase Font</button>
+
+    <br><br>
+
+    <!-- Div element to animate -->
+    <div id="box">Box</div>
+
+</body>
+</html>
