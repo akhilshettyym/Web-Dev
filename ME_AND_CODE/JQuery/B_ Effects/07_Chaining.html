@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Chaining Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        // Chaining multiple jQuery methods
+        $("#chainButton").click(function(){
+            $("#box")
+                .css("background", "lightcoral") // Change background color
+                .slideUp(1000) // Slide up in 1 second
+                .slideDown(1000) // Slide down in 1 second
+                .fadeOut(1000) // Fade out in 1 second
+                .fadeIn(1000) // Fade in in 1 second
+                .css("border", "3px solid red"); // Add border at the end
+        });
+
+    });
+    </script>
+    <style>
+        /* Styling for demonstration */
+        #box {
+            background: lightblue;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>jQuery Chaining Example</h2>
+
+    <button id="chainButton">Run Chaining</button>
+
+    <div id="box">Chaining Effect</div>
+
+</body>
+</html>
