@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Sliding Effects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        /* slideDown()
+        The slideDown() method makes a hidden element slide down.
+        The speed parameter can be "slow", "fast", or a duration in milliseconds.
+        */
+        $("#slideDownBtn").click(function(){
+            $("#panel").slideDown();       // Default speed
+            $("#panel2").slideDown("slow"); // Slow speed
+            $("#panel3").slideDown(2000);  // 2 seconds duration
+        });
+
+        /* slideUp()
+        The slideUp() method makes a visible element slide up, hiding it.
+        */
+        $("#slideUpBtn").click(function(){
+            $("#panel").slideUp();        // Default speed
+            $("#panel2").slideUp("slow"); // Slow speed
+            $("#panel3").slideUp(2000);   // 2 seconds duration
+        });
+
+        /* slideToggle()
+        The slideToggle() method alternates between slideDown() and slideUp().
+        */
+        $("#slideToggleBtn").click(function(){
+            $("#panel").slideToggle();       // Default speed
+            $("#panel2").slideToggle("slow"); // Slow speed
+            $("#panel3").slideToggle(2000);  // 2 seconds duration
+        });
+
+    });
+    </script>
+    <style>
+        /* Styling for the sliding panels */
+        .panel {
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            background-color: lightblue;
+            border: 2px solid blue;
+            margin: 10px;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>jQuery Sliding Effects</h2>
+
+    <!-- Buttons to trigger sliding effects -->
+    <button id="slideDownBtn">Slide Down</button>
+    <button id="slideUpBtn">Slide Up</button>
+    <button id="slideToggleBtn">Slide Toggle</button>
+
+    <br><br>
+
+    <!-- Div elements to demonstrate sliding -->
+    <div id="panel" class="panel">Panel 1</div>
+    <div id="panel2" class="panel">Panel 2</div>
+    <div id="panel3" class="panel">Panel 3</div>
+
+</body>
+</html>
