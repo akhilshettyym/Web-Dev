@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Fading Effects Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        /* fadeIn()
+        The fadeIn() method gradually increases the opacity of an element, making it visible.
+        The optional speed parameter can be "slow", "fast", or a duration in milliseconds.
+        */
+        $("#fadeInBtn").click(function(){
+            $("#box1").fadeIn();        // Default speed
+            $("#box2").fadeIn("slow");  // Slow speed
+            $("#box3").fadeIn(3000);    // 3 seconds duration
+        });
+
+        /* fadeOut()
+        The fadeOut() method gradually decreases the opacity of an element, making it disappear.
+        */
+        $("#fadeOutBtn").click(function(){
+            $("#box1").fadeOut();        // Default speed
+            $("#box2").fadeOut("slow");  // Slow speed
+            $("#box3").fadeOut(3000);    // 3 seconds duration
+        });
+
+        /* fadeToggle()
+        The fadeToggle() method alternates between fadeIn() and fadeOut().
+        If the element is visible, it fades out. If it's hidden, it fades in.
+        */
+        $("#fadeToggleBtn").click(function(){
+            $("#box1").fadeToggle();        // Default speed
+            $("#box2").fadeToggle("slow");  // Slow speed
+            $("#box3").fadeToggle(3000);    // 3 seconds duration
+        });
+
+        /* fadeTo()
+        The fadeTo() method fades the element to a specified opacity (between 0 and 1).
+        */
+        $("#fadeToBtn").click(function(){
+            $("#box1").fadeTo("slow", 0.15);  // Fade to 15% opacity
+            $("#box2").fadeTo("slow", 0.4);   // Fade to 40% opacity
+            $("#box3").fadeTo("slow", 0.7);   // Fade to 70% opacity
+        });
+
+    });
+    </script>
+    <style>
+        /* Styling for the div elements */
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: none; /* Initially hidden */
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            color: white;
+        }
+        #box1 { background-color: red; }
+        #box2 { background-color: green; }
+        #box3 { background-color: blue; }
+    </style>
+</head>
+<body>
+
+    <h2>jQuery Fading Effects</h2>
+
+    <!-- Buttons to trigger fading effects -->
+    <button id="fadeInBtn">Fade In</button>
+    <button id="fadeOutBtn">Fade Out</button>
+    <button id="fadeToggleBtn">Fade Toggle</button>
+    <button id="fadeToBtn">Fade To</button>
+
+    <br><br>
+
+    <!-- Div elements to demonstrate fading -->
+    <div id="box1" class="box">Box 1</div>
+    <div id="box2" class="box">Box 2</div>
+    <div id="box3" class="box">Box 3</div>
+
+</body>
+</html>
