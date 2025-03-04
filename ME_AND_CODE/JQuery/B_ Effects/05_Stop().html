@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Stop Animation Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        // Slide down and up effect on button click
+        $("#slideToggle").click(function(){
+            $("#panel").slideToggle(2000);
+        });
+
+        // Stop animation/effect immediately
+        $("#stop").click(function(){
+            $("#panel").stop();
+        });
+
+        // Custom animation with stop()
+        $("#animateBox").click(function(){
+            $("#box").animate({left: '250px', opacity: '0.5'}, 3000);
+        });
+
+        // Stop all animations in queue
+        $("#stopAll").click(function(){
+            $("#box").stop(true);
+        });
+
+        // Stop animation and complete the current one
+        $("#stopFinish").click(function(){
+            $("#box").stop(true, true);
+        });
+
+    });
+    </script>
+    <style>
+        /* Styling for panel */
+        #panel {
+            display: none;
+            background: lightgreen;
+            padding: 20px;
+            width: 200px;
+            border: 2px solid green;
+            text-align: center;
+        }
+
+        /* Styling for animated box */
+        #box {
+            position: relative;
+            background: lightblue;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 1em;
+            border: 2px solid blue;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>jQuery Stop Animation Example</h2>
+
+    <!-- Slide panel example -->
+    <button id="slideToggle">Slide Down/Up</button>
+    <button id="stop">Stop Slide</button>
+    <div id="panel">This is a panel</div>
+
+    <br><br>
+
+    <!-- Custom animation example -->
+    <button id="animateBox">Start Animation</button>
+    <button id="stopAll">Stop All Animations</button>
+    <button id="stopFinish">Stop & Finish Animation</button>
+    <div id="box">Box</div>
+
+</body>
+</html>
