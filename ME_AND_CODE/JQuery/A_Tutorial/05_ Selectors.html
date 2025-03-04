@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Selectors Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Hide all <p> elements when the button is clicked
+            $("#hideParagraphs").click(function () {
+                $("p").hide();
+            });
+
+            // Hide all elements when the button is clicked
+            $("#hideAll").click(function () {
+                $("*").hide();
+            });
+
+            // Hide the clicked button
+            $("button").click(function () {
+                $(this).hide();
+            });
+
+            // Hide all <p> elements with class "intro"
+            $("#hideIntro").click(function () {
+                $("p.intro").hide();
+            });
+
+            // Hide the first <p> element
+            $("#hideFirstP").click(function () {
+                $("p:first").hide();
+            });
+
+            // Hide the first <li> element of the first <ul>
+            $("#hideFirstLI").click(function () {
+                $("ul li:first").hide();
+            });
+
+            // Hide the first <li> of every <ul>
+            $("#hideFirstChildLI").click(function () {
+                $("ul li:first-child").hide();
+            });
+
+            // Hide all elements with an href attribute
+            $("#hideHref").click(function () {
+                $("[href]").hide();
+            });
+
+            // Hide all <a> elements with target="_blank"
+            $("#hideTargetBlank").click(function () {
+                $("a[target='_blank']").hide();
+            });
+
+            // Hide all <a> elements with target NOT equal to "_blank"
+            $("#hideTargetNotBlank").click(function () {
+                $("a[target!='_blank']").hide();
+            });
+
+            // Hide all button elements (including input type="button")
+            $("#hideButtons").click(function () {
+                $(":button").hide();
+            });
+
+            // Hide all even <tr> elements
+            $("#hideEvenRows").click(function () {
+                $("tr:even").hide();
+            });
+
+            // Hide all odd <tr> elements
+            $("#hideOddRows").click(function () {
+                $("tr:odd").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <h2>jQuery Selectors Example</h2>
+
+    <p>This is a paragraph.</p>
+    <p class="intro">This is another paragraph with class "intro".</p>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <ul>
+        <li>Item A</li>
+        <li>Item B</li>
+        <li>Item C</li>
+    </ul>
+
+    <p><a href="https://www.example.com">Example Link</a></p>
+    <p><a href="https://www.example.com" target="_blank">Example Link (New Tab)</a></p>
+
+    <table border="1">
+        <tr>
+            <td>Row 1</td>
+        </tr>
+        <tr>
+            <td>Row 2</td>
+        </tr>
+        <tr>
+            <td>Row 3</td>
+        </tr>
+        <tr>
+            <td>Row 4</td>
+        </tr>
+    </table>
+
+    <button id="hideParagraphs">Hide All Paragraphs</button>
+    <button id="hideAll">Hide Everything</button>
+    <button id="hideIntro">Hide .intro Paragraphs</button>
+    <button id="hideFirstP">Hide First Paragraph</button>
+    <button id="hideFirstLI">Hide First <li> in First <ul></button>
+    <button id="hideFirstChildLI">Hide First <li> in Every <ul></button>
+    <button id="hideHref">Hide Elements with href</button>
+    <button id="hideTargetBlank">Hide Links with target="_blank"</button>
+    <button id="hideTargetNotBlank">Hide Links with target!="_blank"</button>
+    <button id="hideButtons">Hide All Buttons</button>
+    <button id="hideEvenRows">Hide Even Table Rows</button>
+    <button id="hideOddRows">Hide Odd Table Rows</button>
+
+</body>
+</html>
