@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Hide, Show, and Toggle Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+        /* hide()
+        The hide() method hides an element.
+        The optional speed parameter can be "slow", "fast", or milliseconds.
+        The optional callback function runs after the hide() is complete.
+        */
+        $("#hide").click(function(){
+            $("p").hide(1000); // Hide paragraph with animation in 1 second
+        });
+
+        /* show()
+        The show() method makes a hidden element visible.
+        The optional speed and callback work the same way as hide().
+        */
+        $("#show").click(function(){
+            $("p").show(1000); // Show paragraph with animation in 1 second
+        });
+
+        /* toggle()
+        The toggle() method switches between hide() and show().
+        If the element is visible, it hides it; if it's hidden, it shows it.
+        */
+        $("#toggle").click(function(){
+            $("p").toggle(1000); // Toggle paragraph visibility with animation in 1 second
+        });
+
+    });
+
+    </script>
+</head>
+<body>
+
+    <h2>jQuery Hide, Show, and Toggle Methods</h2>
+
+    <p>This is a paragraph that can be hidden, shown, or toggled.</p>
+
+    <!-- Buttons to trigger jQuery methods -->
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+
+</body>
+</html>
