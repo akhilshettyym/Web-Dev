@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Callback Functions Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        // Hide paragraph with a callback function
+        $("#hideWithCallback").click(function(){
+            $("p").hide("slow", function(){
+                alert("The paragraph is now hidden (Callback executed)");
+            });
+        });
+
+        // Hide paragraph without a callback function
+        $("#hideWithoutCallback").click(function(){
+            $("p").hide(1000);
+            alert("The paragraph is now hidden (No Callback, Alert appears immediately)");
+        });
+
+        // Fade out a div, then change text inside it using callback
+        $("#fadeWithCallback").click(function(){
+            $("#box").fadeOut(1000, function(){
+                $("#box").text("Faded Out!").fadeIn(1000);
+            });
+        });
+
+    });
+    </script>
+    <style>
+        /* Styling for demonstration */
+        #box {
+            background: lightblue;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>jQuery Callback Functions Example</h2>
+
+    <p>This is a sample paragraph. Click the buttons below to hide it.</p>
+    
+    <!-- Hide paragraph with and without callback -->
+    <button id="hideWithCallback">Hide with Callback</button>
+    <button id="hideWithoutCallback">Hide without Callback</button>
+
+    <br><br>
+
+    <!-- Fade example with callback -->
+    <button id="fadeWithCallback">Fade Out & Change Text (Callback)</button>
+    <div id="box">Fade Me!</div>
+
+</body>
+</html>
