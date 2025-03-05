@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Add Elements</title>
+
+    <!-- Include jQuery from CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+        // Append text at the end of the element
+        $("#appendBtn").click(function(){
+            $("#contentBox").append(" <b>(Appended Text)</b>");
+        });
+
+        // Prepend text at the beginning of the element
+        $("#prependBtn").click(function(){
+            $("#contentBox").prepend("<b>(Prepended Text) </b>");
+        });
+
+        // Append multiple elements dynamically
+        $("#appendMultipleBtn").click(function(){
+            var txt1 = "<p>Created using HTML.</p>";  // Created with HTML string
+            var txt2 = $("<p></p>").text("Created using jQuery.");  // Created with jQuery
+            var txt3 = document.createElement("p");  // Created using JavaScript DOM
+            txt3.innerHTML = "Created using JavaScript DOM.";
+            
+            $("#multipleContent").append(txt1, txt2, txt3);  // Append all elements
+        });
+
+        // Insert content after the image
+        $("#afterBtn").click(function(){
+            $("#sampleImage").after(" <span>Added after the image</span>");
+        });
+
+        // Insert content before the image
+        $("#beforeBtn").click(function(){
+            $("#sampleImage").before("<span>Added before the image </span>");
+        });
+
+        // Insert multiple elements after the image
+        $("#afterMultipleBtn").click(function(){
+            var txt1 = "<b>I </b>";                    // Create element with HTML
+            var txt2 = $("<i></i>").text("love ");     // Create with jQuery
+            var txt3 = document.createElement("b");    // Create with JavaScript DOM
+            txt3.innerHTML = "jQuery!";
+            $("#sampleImage").after(txt1, txt2, txt3);  // Insert after the image
+        });
+
+    });
+    </script>
+
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .box {
+            padding: 10px;
+            border: 2px solid #333;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        img {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>jQuery - Add Elements</h2>
+
+    <!-- Example: Append & Prepend -->
+    <div id="contentBox" class="box">This is original content.</div>
+    <button id="appendBtn">Append Text</button>
+    <button id="prependBtn">Prepend Text</button>
+
+    <br><br>
+
+    <!-- Example: Append multiple elements -->
+    <div id="multipleContent" class="box">Existing Content</div>
+    <button id="appendMultipleBtn">Append Multiple Elements</button>
+
+    <br><br>
+
+    <!-- Example: After & Before an image -->
+    <img id="sampleImage" src="https://via.placeholder.com/150" alt="Sample Image">
+    <button id="afterBtn">Insert After Image</button>
+    <button id="beforeBtn">Insert Before Image</button>
+    <button id="afterMultipleBtn">Insert Multiple After Image</button>
+
+</body>
+</html>
