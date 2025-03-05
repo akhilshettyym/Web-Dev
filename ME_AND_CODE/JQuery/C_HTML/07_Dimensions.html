@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Dimensions</title>
+
+    <!-- Include jQuery from CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+        // Get width and height (excluding padding, border, margin)
+        $("#getSizeBtn").click(function(){
+            let txt = "Width: " + $("#box").width() + "px<br>";
+            txt += "Height: " + $("#box").height() + "px";
+            $("#output").html(txt);
+        });
+
+        // Get innerWidth and innerHeight (includes padding)
+        $("#getInnerSizeBtn").click(function(){
+            let txt = "Inner Width: " + $("#box").innerWidth() + "px<br>";
+            txt += "Inner Height: " + $("#box").innerHeight() + "px";
+            $("#output").html(txt);
+        });
+
+        // Get outerWidth and outerHeight (includes padding + border)
+        $("#getOuterSizeBtn").click(function(){
+            let txt = "Outer Width: " + $("#box").outerWidth() + "px<br>";
+            txt += "Outer Height: " + $("#box").outerHeight() + "px";
+            $("#output").html(txt);
+        });
+
+        // Get outerWidth(true) and outerHeight(true) (includes padding + border + margin)
+        $("#getOuterFullSizeBtn").click(function(){
+            let txt = "Outer Width (+Margin): " + $("#box").outerWidth(true) + "px<br>";
+            txt += "Outer Height (+Margin): " + $("#box").outerHeight(true) + "px";
+            $("#output").html(txt);
+        });
+
+        // Get document and window dimensions
+        $("#getWindowDocSizeBtn").click(function(){
+            let txt = "Document Size: " + $(document).width() + "px x " + $(document).height() + "px\n";
+            txt += "Window Size: " + $(window).width() + "px x " + $(window).height() + "px";
+            alert(txt);
+        });
+
+        // Set width and height
+        $("#setSizeBtn").click(function(){
+            $("#box").width(300).height(300);
+        });
+
+    });
+    </script>
+
+    <style>
+        /* Box Styling */
+        #box {
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border: 5px solid blue;
+            margin: 15px;
+            background-color: lightblue;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #output {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>jQuery - Dimension Methods</h2>
+
+    <!-- Example Div -->
+    <div id="box">Resize Me!</div>
+
+    <!-- Buttons to interact -->
+    <button id="getSizeBtn">Get Width & Height</button>
+    <button id="getInnerSizeBtn">Get Inner Width & Height</button>
+    <button id="getOuterSizeBtn">Get Outer Width & Height</button>
+    <button id="getOuterFullSizeBtn">Get Outer Width/Height (+Margin)</button>
+    <button id="getWindowDocSizeBtn">Get Window & Document Size</button>
+    <button id="setSizeBtn">Set Width & Height (300px)</button>
+
+    <div id="output"></div>
+
+</body>
+</html>
