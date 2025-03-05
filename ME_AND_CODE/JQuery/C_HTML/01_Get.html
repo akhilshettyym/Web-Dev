@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Get Content & Attributes</title>
+
+    <!-- Including jQuery from Google's CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+        // 1️ Get text content of an element (without HTML tags)
+        $("#getTextBtn").click(function(){
+            let textContent = $("#demoText").text();  // Get only text
+            alert("Text Content: " + textContent);
+        });
+
+        // 2️ Get HTML content of an element (includes HTML tags)
+        $("#getHtmlBtn").click(function(){
+            let htmlContent = $("#demoText").html();  // Get HTML with tags
+            alert("HTML Content: " + htmlContent);
+        });
+
+        // 3️ Get the value from an input field
+        $("#getValueBtn").click(function(){
+            let inputValue = $("#inputField").val();  // Get value of input
+            alert("Input Field Value: " + inputValue);
+        });
+
+        // 4️ Get an attribute value (href of the link)
+        $("#getAttrBtn").click(function(){
+            let linkHref = $("#Proreact").attr("href");  // Get href attribute
+            alert("Link URL: " + linkHref);
+        });
+
+        // 5️ Get multiple attributes (href + target)
+        $("#getMultiAttrBtn").click(function(){
+            let href = $("#Proreact").attr("href");
+            let target = $("#Proreact").attr("target");
+            alert("Link: " + href + "\nTarget: " + target);
+        });
+
+        // 6️ Get the placeholder text of an input field
+        $("#getPlaceholderBtn").click(function(){
+            let placeholderText = $("#inputField").attr("placeholder");  // Get placeholder text
+            alert("Placeholder: " + placeholderText);
+        });
+
+        // 7️ Get the class name of an element
+        $("#getClassBtn").click(function(){
+            let className = $("#demoText").attr("class");  // Get class name
+            alert("Class Name: " + className);
+        });
+
+    });
+    </script>
+
+    <style>
+        /* Basic styling for elements */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .box {
+            padding: 10px;
+            border: 2px solid #333;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2> jQuery - Get Content & Attributes </h2>
+
+    <!-- Example to get text and HTML -->
+    <div id="demoText" class="box">
+        <strong>Hello!</strong> This is a <span style="color:blue">jQuery demo</span>.
+    </div>
+
+    <button id="getTextBtn">Get Text</button>
+    <button id="getHtmlBtn">Get HTML</button>
+
+    <br><br>
+
+    <!-- Example to get value from input field -->
+    <input type="text" id="inputField" value="Hello jQuery!" placeholder="Enter something...">
+    <button id="getValueBtn">Get Input Value</button>
+    <button id="getPlaceholderBtn">Get Placeholder</button>
+
+    <br><br>
+
+    <!-- Example to get attribute value -->
+    <a id="Proreact" href="https://akhilshettyym.github.io/Proreact" target="_blank">Visit Proreact</a>
+    <button id="getAttrBtn">Get Link Attribute</button>
+    <button id="getMultiAttrBtn">Get Multiple Attributes</button>
+
+    <br><br>
+
+    <!-- Example to get the class name of an element -->
+    <button id="getClassBtn">Get Class Name</button>
+
+</body>
+</html>
