@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Get and Set CSS Classes</title>
+
+    <!-- Include jQuery from CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+        // Add a CSS class to multiple elements
+        $("#addClassBtn").click(function(){
+            $("h1, h2, p").addClass("blue");  // Adds "blue" class to headers and paragraphs
+            $("div").addClass("important");   // Adds "important" class to div
+        });
+
+        // Add multiple CSS classes to an element
+        $("#addMultipleClassBtn").click(function(){
+            $("#styledDiv").addClass("important blue");  // Adds both "important" and "blue"
+        });
+
+        // Remove a CSS class from multiple elements
+        $("#removeClassBtn").click(function(){
+            $("h1, h2, p").removeClass("blue");  // Removes "blue" class
+        });
+
+        // Toggle a CSS class (Add if not present, remove if present)
+        $("#toggleClassBtn").click(function(){
+            $("h1, h2, p").toggleClass("blue");  // Toggles "blue" class on headers and paragraphs
+        });
+
+    });
+    </script>
+
+    <style>
+        /* Example styles */
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+        .blue {
+            color: blue;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .box {
+            padding: 10px;
+            border: 2px solid #333;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>jQuery - Get and Set CSS Classes</h2>
+
+    <!-- Example: Add a class -->
+    <h1>Main Heading</h1>
+    <h2>Sub Heading</h2>
+    <p>This is a paragraph.</p>
+    <div class="box" id="styledDiv">This div will have styling applied.</div>
+
+    <button id="addClassBtn">Add Class</button>
+    <button id="addMultipleClassBtn">Add Multiple Classes</button>
+    <button id="removeClassBtn">Remove Class</button>
+    <button id="toggleClassBtn">Toggle Class</button>
+
+</body>
+</html>
