@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Remove Elements</title>
+
+    <!-- Include jQuery from CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+        // Remove an element completely from the DOM
+        $("#removeBtn").click(function(){
+            $("#removeBox").remove();  // Removes the div and its content
+        });
+
+        // Empty only the content inside an element but keep the element itself
+        $("#emptyBtn").click(function(){
+            $("#emptyBox").empty();  // Clears content but keeps the div
+        });
+
+        // Remove only specific elements based on a class
+        $("#removeFilteredBtn").click(function(){
+            $("p").remove(".test");  // Removes only paragraphs with class "test"
+        });
+
+        // Remove multiple specific elements based on class
+        $("#removeMultipleFilteredBtn").click(function(){
+            $("p").remove(".test, .demo");  // Removes paragraphs with class "test" or "demo"
+        });
+
+    });
+    </script>
+
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .box {
+            padding: 10px;
+            border: 2px solid #333;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>jQuery - Remove Elements</h2>
+
+    <!-- Example: Remove an element -->
+    <div id="removeBox" class="box">This box will be removed.</div>
+    <button id="removeBtn">Remove Element</button>
+
+    <br><br>
+
+    <!-- Example: Empty content but keep the element -->
+    <div id="emptyBox" class="box">
+        <p>This content will be cleared, but the box remains.</p>
+    </div>
+    <button id="emptyBtn">Empty Content</button>
+
+    <br><br>
+
+    <!-- Example: Remove elements selectively -->
+    <div class="box">
+        <p class="test">Paragraph with class "test" (Will be removed).</p>
+        <p class="demo">Paragraph with class "demo" (Will be removed in next example).</p>
+        <p>Normal paragraph (Will not be removed).</p>
+    </div>
+    
+    <button id="removeFilteredBtn">Remove Paragraphs with Class "test"</button>
+    <button id="removeMultipleFilteredBtn">Remove Paragraphs with Class "test" and "demo"</button>
+
+</body>
+</html>
