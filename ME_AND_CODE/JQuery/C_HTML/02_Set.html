@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Set Content & Attributes</title>
+
+    <!-- Including jQuery from Google's CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+        // 1️ Set text content (Plain text, no HTML tags)
+        $("#setTextBtn").click(function(){
+            $("#textExample").text("Hello, this is updated text!");
+        });
+
+        // 2️ Set HTML content (Includes HTML formatting)
+        $("#setHtmlBtn").click(function(){
+            $("#htmlExample").html("<b>Hello, this is bold text!</b>");
+        });
+
+        // 3️ Set value in input field
+        $("#setValueBtn").click(function(){
+            $("#inputExample").val("New Value Set!");
+        });
+
+        // 4️ Set text using a callback function
+        $("#setTextCallbackBtn").click(function(){
+            $("#textExample").text(function(i, origText){
+                return "Old Text: " + origText + " | New Text: Updated! (Index: " + i + ")";
+            });
+        });
+
+        // 5️ Set HTML using a callback function
+        $("#setHtmlCallbackBtn").click(function(){
+            $("#htmlExample").html(function(i, origHtml){
+                return "Old HTML: " + origHtml + " | New HTML: <b>Updated Bold Text!</b> (Index: " + i + ")";
+            });
+        });
+
+        // 6️ Set a single attribute (Change link href)
+        $("#setAttrBtn").click(function(){
+            $("#sampleLink").attr("href", "https://www.google.com");
+        });
+
+        // 7️ Set multiple attributes at once
+        $("#setMultiAttrBtn").click(function(){
+            $("#sampleLink").attr({
+                "href": "https://www.wikipedia.org",
+                "title": "Visit Wikipedia"
+            });
+        });
+
+        // 8️ Set an attribute using a callback function
+        $("#setAttrCallbackBtn").click(function(){
+            $("#sampleLink").attr("href", function(i, origValue){
+                return origValue + "?source=updated";
+            });
+        });
+
+    });
+    </script>
+
+    <style>
+        /* Basic styling for elements */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .box {
+            padding: 10px;
+            border: 2px solid #333;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>jQuery - Set Content & Attributes</h2>
+
+    <!-- Example: Set text and HTML -->
+    <div id="textExample" class="box">Original text content.</div>
+    <button id="setTextBtn">Set Text</button>
+    <button id="setTextCallbackBtn">Set Text (Callback)</button>
+
+    <br><br>
+
+    <div id="htmlExample" class="box"><i>Original HTML content.</i></div>
+    <button id="setHtmlBtn">Set HTML</button>
+    <button id="setHtmlCallbackBtn">Set HTML (Callback)</button>
+
+    <br><br>
+
+    <!-- Example: Set value in input -->
+    <input type="text" id="inputExample" value="Original Value">
+    <button id="setValueBtn">Set Input Value</button>
+
+    <br><br>
+
+    <!-- Example: Set attributes -->
+    <a id="sampleLink" href="https://example.com" target="_blank">Visit Example</a>
+    <button id="setAttrBtn">Set Link Attribute</button>
+    <button id="setMultiAttrBtn">Set Multiple Attributes</button>
+    <button id="setAttrCallbackBtn">Set Attribute (Callback)</button>
+
+</body>
+</html>
