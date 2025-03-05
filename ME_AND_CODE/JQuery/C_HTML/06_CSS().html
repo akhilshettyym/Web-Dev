@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - css() Method</title>
+
+    <!-- Include jQuery from CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+        // Get a CSS property value
+        $("#getCssBtn").click(function(){
+            let bgColor = $("p").css("background-color");  // Get background-color of first <p>
+            alert("Background Color: " + bgColor);
+        });
+
+        // Set a single CSS property
+        $("#setCssBtn").click(function(){
+            $("p").css("background-color", "yellow");  // Change background color of all <p>
+        });
+
+        // Set multiple CSS properties
+        $("#setMultipleCssBtn").click(function(){
+            $("p").css({
+                "background-color": "lightblue",
+                "font-size": "18px",
+                "color": "darkblue",
+                "padding": "10px",
+                "border": "2px solid blue"
+            });  // Apply multiple styles to all <p>
+        });
+
+    });
+    </script>
+
+    <style>
+        /* Default paragraph styling */
+        p {
+            background-color: lightgray;
+            padding: 10px;
+            border: 1px solid black;
+            font-size: 16px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>jQuery - css() Method</h2>
+
+    <!-- Example: Apply styles dynamically -->
+    <p>This is a paragraph with default styles.</p>
+
+    <button id="getCssBtn">Get Background Color</button>
+    <button id="setCssBtn">Set Background Color</button>
+    <button id="setMultipleCssBtn">Set Multiple Styles</button>
+
+</body>
+</html>
