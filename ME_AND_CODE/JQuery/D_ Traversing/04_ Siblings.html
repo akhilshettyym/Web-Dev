@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Traversing - Siblings</title>
+
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        /* Basic styling */
+        body { font-family: Arial, sans-serif; }
+        .box { padding: 10px; margin: 5px; border: 2px solid blue; display: block; }
+        .highlight { background-color: yellow; } /* Highlight effect */
+    </style>
+
+    <script>
+    $(document).ready(function(){
+
+        // 1. Find All Sibling Elements
+        $("#findSiblings").click(function(){
+            $("h2").siblings().addClass("highlight");
+        });
+
+        // 2. Find Specific Sibling Elements (Filtering)
+        $("#findParagraphSiblings").click(function(){
+            $("h2").siblings("p").addClass("highlight");
+        });
+
+        // 3. Find Next Sibling
+        $("#findNextSibling").click(function(){
+            $("h2").next().addClass("highlight");
+        });
+
+        // 4. Find All Next Siblings
+        $("#findAllNextSiblings").click(function(){
+            $("h2").nextAll().addClass("highlight");
+        });
+
+        // 5. Find Next Siblings Until a Specific Element
+        $("#findNextUntil").click(function(){
+            $("h2").nextUntil("h6").addClass("highlight");
+        });
+
+        // 6. Find Previous Sibling
+        $("#findPrevSibling").click(function(){
+            $("h4").prev().addClass("highlight");
+        });
+
+        // 7. Find All Previous Siblings
+        $("#findAllPrevSiblings").click(function(){
+            $("h4").prevAll().addClass("highlight");
+        });
+
+        // 8. Find Previous Siblings Until a Specific Element
+        $("#findPrevUntil").click(function(){
+            $("h4").prevUntil("h1").addClass("highlight");
+        });
+
+    });
+    </script>
+</head>
+<body>
+
+    <h2>jQuery Traversing - Finding Siblings</h2>
+
+    <!-- Example Structure -->
+    <div class="box">
+        <h1>Main Heading (Not a Sibling)</h1>
+        <h2>Subheading (Target Element)</h2>
+        <p>First paragraph (Sibling of h2)</p>
+        <p>Second paragraph (Sibling of h2)</p>
+        <h3>Another heading (Sibling of h2)</h3>
+        <p>Another paragraph (Sibling of h2)</p>
+        <h4>Sub-subheading</h4>
+        <h5>Another subheading</h5>
+        <h6>End heading (Target for nextUntil)</h6>
+    </div>
+
+    <!-- Buttons to test Traversing -->
+    <button id="findSiblings">Find All Siblings of h2</button>
+    <button id="findParagraphSiblings">Find Sibling <p> Elements of h2</button>
+    <button id="findNextSibling">Find Next Sibling of h2</button>
+    <button id="findAllNextSiblings">Find All Next Siblings of h2</button>
+    <button id="findNextUntil">Find Next Siblings Until h6</button>
+    <button id="findPrevSibling">Find Previous Sibling of h4</button>
+    <button id="findAllPrevSiblings">Find All Previous Siblings of h4</button>
+    <button id="findPrevUntil">Find Previous Siblings Until h1</button>
+
+</body>
+</html>
