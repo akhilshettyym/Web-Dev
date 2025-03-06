@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Filters Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            border: 1px solid #ddd;
+            margin-top: 4px;
+        }
+        .filterable-div {
+            padding: 10px;
+            border: 1px solid #000;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Search Input -->
+    <input type="text" id="myInput" placeholder="Search...">
+
+    <!-- Filterable Table -->
+    <table id="myTable">
+        <tr><th>Firstname</th><th>Lastname</th><th>Email</th></tr>
+        <tr><td>John</td><td>Doe</td><td>john@example.com</td></tr>
+        <tr><td>Mary</td><td>Moe</td><td>mary@mail.com</td></tr>
+        <tr><td>July</td><td>Dooley</td><td>july@greatstuff.com</td></tr>
+        <tr><td>Anja</td><td>Ravendale</td><td>a_r@test.com</td></tr>
+    </table>
+
+    <br>
+
+    <!-- Filterable List -->
+    <ul id="myList">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Fourth item</li>
+    </ul>
+
+    <br>
+
+    <!-- Filterable Div Content -->
+    <div id="myDiv">
+        <p class="filterable-div">I am a paragraph.</p>
+        <div class="filterable-div">I am a div element inside div.</div>
+        <button class="filterable-div">I am a button</button>
+        <button class="filterable-div">Another button</button>
+        <p class="filterable-div">Another paragraph.</p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+
+                // Filter Table Rows (excluding the header)
+                $("#myTable tr").not(":first").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+
+                // Filter List Items
+                $("#myList li").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+
+                // Filter Div Content
+                $(".filterable-div").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
