@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery noConflict Example</title>
+    
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Release the $ shortcut so other frameworks can use it
+        var jq = $.noConflict();
+
+        jq(document).ready(function(){
+            
+            // Using 'jq' instead of '$' to avoid conflicts
+            jq("#btn1").click(function(){
+                jq("p").text("Using custom alias 'jq' - jQuery is still working!");
+            });
+
+            // Using $ inside a local function scope
+            jq("#btn2").click(function(){
+                jQuery.noConflict();
+                jQuery(document).ready(function($){
+                    $("p").text("Using $ inside a function scope - jQuery is working!");
+                });
+            });
+
+            // Using full 'jQuery' instead of '$'
+            jq("#btn3").click(function(){
+                jQuery("p").text("Using 'jQuery' instead of '$' - No conflicts!");
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <p>Click a button to change this text.</p>
+    
+    <button id="btn1">Use Custom Alias</button>
+    <button id="btn2">Use $ in Function Scope</button>
+    <button id="btn3">Use Full jQuery</button>
+
+</body>
+</html>
