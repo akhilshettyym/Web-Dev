@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Traversing - Filtering</title>
+
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        /* Basic styling */
+        body { font-family: Arial, sans-serif; }
+        .box { padding: 10px; margin: 5px; border: 2px solid blue; display: block; }
+        .highlight { background-color: yellow; } /* Highlight effect */
+    </style>
+
+    <script>
+    $(document).ready(function(){
+
+        // 1. Select First Element
+        $("#selectFirst").click(function(){
+            $("div").first().addClass("highlight");
+        });
+
+        // 2. Select Last Element
+        $("#selectLast").click(function(){
+            $("div").last().addClass("highlight");
+        });
+
+        // 3. Select Specific Element (Index Based)
+        $("#selectSecond").click(function(){
+            $("p").eq(1).addClass("highlight");  // 0-based index (1 = second element)
+        });
+
+        // 4. Filter Elements Based on a Condition
+        $("#filterIntro").click(function(){
+            $("p").filter(".intro").addClass("highlight");
+        });
+
+        // 5. Exclude Elements Based on a Condition
+        $("#excludeIntro").click(function(){
+            $("p").not(".intro").addClass("highlight");
+        });
+
+    });
+    </script>
+</head>
+<body>
+
+    <h2>jQuery Filtering Methods</h2>
+
+    <!-- Example Structure -->
+    <div class="box">First div</div>
+    <div class="box">Second div</div>
+    <div class="box">Third div</div>
+
+    <p class="intro">This is an introduction paragraph.</p>
+    <p>This is a normal paragraph.</p>
+    <p class="intro">Another introduction paragraph.</p>
+    <p>Another normal paragraph.</p>
+
+    <!-- Buttons to test filtering -->
+    <button id="selectFirst">Select First Div</button>
+    <button id="selectLast">Select Last Div</button>
+    <button id="selectSecond">Select Second Paragraph</button>
+    <button id="filterIntro">Filter Paragraphs with Class 'intro'</button>
+    <button id="excludeIntro">Exclude Paragraphs with Class 'intro'</button>
+
+</body>
+</html>
