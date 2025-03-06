@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #ffff">
+    
+    <!-- Parent container -->
+    <div class="parent"></div>
+
+    <!-- Day elements -->
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thursday</div>
+
+</body>
+
+<script>
+
+    // Selecting the 'parent' div
+    const parent = document.querySelector('.parent');
+
+    // Logging the parent element
+    // console.log(parent);
+
+    // Logging the child elements inside the parent (HTMLCollection)
+    // console.log(parent.children);
+
+    // Accessing the second child of the parent
+    // console.log(parent.children[1]);
+
+    // Accessing the inner HTML of the second child
+    // console.log(parent.children[1].innerHTML);
+
+    // Looping through all child elements of parent and logging their content
+    for (let i = 0; i < parent.children.length; i++){
+        console.log(parent.children[i].innerHTML);
+    }
+
+    // Changing the text color of the second child to orange
+    parent.children[1].style.color = "orange";
+
+    // Logging the first and last child elements of the parent
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    // Selecting the first element with class "day"
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne); // Logs the first ".day" div (Monday)
+
+    // Fixing typo: 'comsole' should be 'console'
+    console.log(dayOne.parentElement); // Logs the parent of 'dayOne'
+
+    console.log(dayOne.nextElementSibling); // Logs the next sibling (Tuesday)
+
+    // Logging all child nodes of the parent, including text nodes (line breaks, spaces)
+    console.log("NODES: ", parent.childNodes); 
+
+</script>
+
+</html>

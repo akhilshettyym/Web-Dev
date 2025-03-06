@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements in DOM</title>
+</head>
+<body style="background-color: #212121; color: #ffff">
+    
+</body>
+
+<script>
+
+    // Step 1: Create a new <div> element
+    const div = document.createElement('div');
+    console.log(div); // Logs the created <div> element to the console
+
+    // Step 2: Assign a class name to the div
+    div.className = "main"; 
+
+    // Step 3: Generate and assign a random ID (between 1 and 11)
+    div.id = Math.round(Math.random() * 10 + 1); 
+
+    // Step 4: Set an attribute (title) for the div element
+    div.setAttribute("title", "Generated title");
+
+    // Step 5: Apply inline CSS styles to the div
+    div.style.backgroundColor = "green"; // Set background color to green
+    div.style.padding = "12px"; // Add padding for better visibility
+
+    // Step 6: Add text content to the div
+    // Instead of using innerText, we create a text node and append it
+    const addtext = document.createTextNode("Akhil Shetty M"); 
+    div.appendChild(addtext); // Append the text node inside the div
+
+    // Step 7: Append the newly created div to the body of the document
+    document.body.appendChild(div); // This makes the div visible on the webpage
+
+</script>
+
+</html>
