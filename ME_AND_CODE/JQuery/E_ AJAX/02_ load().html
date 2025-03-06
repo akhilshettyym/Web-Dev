@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX load() Example</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        #content { border: 1px solid #333; padding: 10px; width: 300px; min-height: 50px; margin: 20px auto; }
+        button { margin: 5px; padding: 8px 15px; cursor: pointer; }
+    </style>
+
+    <script>
+    $(document).ready(function(){
+        // Load the entire content of the external file
+        $("#loadFull").click(function(){
+            $("#content").load("demo_test.txt", function(responseTxt, statusTxt, xhr){
+                if(statusTxt === "success") {
+                    alert("External content loaded successfully!");
+                } 
+                if(statusTxt === "error") {
+                    alert("Error: " + xhr.status + ": " + xhr.statusText);
+                }
+            });
+        });
+
+        // Load only the paragraph with ID #p1 from the external file
+        $("#loadPartial").click(function(){
+            $("#content").load("demo_test.txt #p1");
+        });
+    });
+    </script>
+
+</head>
+<body>
+
+    <h2>jQuery `.load()` Method Example</h2>
+    
+    <!-- Buttons to Trigger AJAX Requests -->
+    <button id="loadFull">Load Full Content</button>
+    <button id="loadPartial">Load Partial Content</button>
+
+    <!-- Area where data will be loaded -->
+    <div id="content">Click a button to load content...</div>
+
+</body>
+</html>
