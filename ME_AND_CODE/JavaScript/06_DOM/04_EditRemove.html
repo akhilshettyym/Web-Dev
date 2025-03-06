@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Edit and Remove</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li> <!-- Default list item -->
+    </ul>
+</body>
+
+<script>
+
+// Function to add a new language to the list
+function addLanguage(langName) {
+    const li = document.createElement('li'); // Create a new <li> element
+    li.innerHTML = `${langName}`; // Set the text inside <li>
+    document.querySelector('.language').appendChild(li); // Append to the <ul> list
+}
+
+// Calling function to add new languages dynamically
+addLanguage("Python");
+addLanguage("TypeScript");
+
+// Optimized function to add language (Better approach)
+function addOptiLanguage(langName) {
+    const li = document.createElement('li'); // Create <li> element
+    li.appendChild(document.createTextNode(langName)); // Add text inside <li> (More efficient)
+    document.querySelector('.language').appendChild(li); // Append to the <ul> list
+}
+
+// Calling function to add another language
+addOptiLanguage('Golang');
+
+// ** EDITING LIST ITEMS **
+
+// Selecting the second <li> item and replacing it with "Mojo"
+const secondLang = document.querySelector("li:nth-child(2)"); // Select 2nd <li>
+
+// Creating a new <li> element for replacement
+const newLi = document.createElement('li');
+newLi.textContent = "Mojo"; // Setting text as "Mojo"
+
+// Replacing the second language with the new <li>
+secondLang.replaceWith(newLi);
+
+// ** Another way to edit an item **
+
+// Selecting the first <li> item and replacing it completely with "TypeScript"
+const firstLang = document.querySelector("li:first-child");
+firstLang.outerHTML = '<li>TypeScript</li>'; // Directly replacing HTML content
+
+// ** REMOVING LAST ITEM **
+
+// Selecting the last <li> and removing it from the list
+const lastLang = document.querySelector('li:last-child');
+lastLang.remove(); // Removes the last list item
+
+</script>
+</html>
