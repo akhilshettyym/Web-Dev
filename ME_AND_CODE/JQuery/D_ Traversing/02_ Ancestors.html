@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Ancestors Traversing</title>
+
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        /* Basic styling */
+        body { font-family: Arial, sans-serif; }
+        .box { padding: 10px; margin: 10px; border: 2px solid blue; }
+        .highlight { background-color: yellow; } /* Highlight effect */
+    </style>
+
+    <script>
+    $(document).ready(function(){
+
+        // 1. Find Direct Parent
+        $("#findParent").click(function(){
+            // Selects the immediate parent of #span1 and adds the "highlight" class
+            $("#span1").parent().addClass("highlight");
+        });
+
+        // 2. Find All Ancestors
+        $("#findAncestors").click(function(){
+            // Selects all ancestors of #span1 (li, ul, div, etc.) and adds "highlight"
+            $("#span1").parents().addClass("highlight");
+        });
+
+        // 3. Find Ancestors Until a Certain Element
+        $("#findAncestorsUntil").click(function(){
+            // Selects ancestors of #span1 up to #div1 (excludes #div1) and adds "highlight"
+            $("#span1").parentsUntil("#div1").addClass("highlight");
+        });
+
+    });
+    </script>
+</head>
+<body>
+
+    <h2>jQuery Traversing - Finding Ancestors</h2>
+
+    <!-- Example Structure -->
+    <div id="div1" class="box">
+        <ul class="box">
+            <li class="box">
+                <span id="span1">Hello!</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Buttons to test Traversing -->
+    <button id="findParent">Find Direct Parent</button>
+    <button id="findAncestors">Find All Ancestors</button>
+    <button id="findAncestorsUntil">Find Ancestors Until Div</button>
+
+</body>
+</html>
