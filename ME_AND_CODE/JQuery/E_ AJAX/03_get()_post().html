@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX GET & POST Example</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        #content { border: 1px solid #333; padding: 10px; width: 300px; min-height: 50px; margin: 20px auto; }
+        button { margin: 5px; padding: 8px 15px; cursor: pointer; }
+        input { padding: 5px; margin: 5px; }
+    </style>
+
+    <script>
+    $(document).ready(function(){
+        // GET Request Example
+        $("#getData").click(function(){
+            $.get("demo_test_get.txt", function(data, status){
+                $("#content").html("<strong>Response:</strong> " + data);
+                alert("Status: " + status);
+            });
+        });
+
+        // POST Request Example
+        $("#postData").click(function(){
+            $.post("demo_test_post.php",
+            {
+                name: $("#name").val(),
+                city: $("#city").val()
+            },
+            function(data, status){
+                $("#content").html("<strong>Response:</strong> " + data);
+                alert("Status: " + status);
+            });
+        });
+    });
+    </script>
+
+</head>
+<body>
+
+    <h2>jQuery AJAX `.get()` & `.post()` Example</h2>
+    
+    <!-- Buttons to Trigger AJAX Requests -->
+    <button id="getData">Load Data (GET)</button>
+
+    <br><br>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="city" placeholder="Enter City">
+    <button id="postData">Send Data (POST)</button>
+
+    <!-- Area where data will be loaded -->
+    <div id="content">Click a button to load data...</div>
+
+</body>
+</html>
