@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Example</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        #content { border: 1px solid #333; padding: 10px; width: 300px; min-height: 50px; margin: 20px auto; }
+        button { margin: 5px; padding: 8px 15px; cursor: pointer; }
+    </style>
+
+    <script>
+    $(document).ready(function(){
+        // 1️⃣ Load External File (.txt)
+        $("#loadData").click(function(){
+            $("#content").load("sample-data.txt", function(response, status, xhr){
+                if (status === "error") {
+                    $("#content").html("<strong>Error loading file!</strong>");
+                }
+            });
+        });
+
+        // 2️⃣ GET Data (Fetch JSON)
+        $("#getData").click(function(){
+            $.get("https://jsonplaceholder.typicode.com/posts/1", function(data){
+                $("#content").html("<strong>Title:</strong> " + data.title);
+            });
+        });
+
+        // 3️⃣ POST Data (Send to Server)
+        $("#postData").click(function(){
+            $.post("https://jsonplaceholder.typicode.com/posts", 
+            { title: "New Post", body: "This is the content", userId: 1 }, 
+            function(response){
+                $("#content").html("<strong>Response ID:</strong> " + response.id);
+            });
+        });
+    });
+    </script>
+
+</head>
+<body>
+
+    <h2>jQuery AJAX Example</h2>
+    
+    <!-- Buttons to Trigger AJAX Requests -->
+    <button id="loadData">Load External File</button>
+    <button id="getData">GET Data (JSON)</button>
+    <button id="postData">POST Data</button>
+
+    <!-- Area where data will be loaded -->
+    <div id="content">Click a button to fetch data...</div>
+
+</body>
+</html>
