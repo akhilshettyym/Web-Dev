@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Traversing Example</title>
+
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .box { padding: 10px; margin: 10px; border: 2px solid blue; }
+        .highlight { background-color: yellow; }
+    </style>
+
+    <script>
+    $(document).ready(function(){
+
+        // Move Up (Find Parent)
+        $("#findParent").click(function(){
+            $("#span1").parent().addClass("highlight");  // Selects direct parent
+        });
+
+        // Move Up (Find All Ancestors)
+        $("#findAncestors").click(function(){
+            $("#span1").parents().addClass("highlight"); // Selects all ancestors
+        });
+
+        // Move Down (Find Child Elements)
+        $("#findChildren").click(function(){
+            $("#div1").children().addClass("highlight"); // Selects direct children
+        });
+
+        // Move Sideways (Find Sibling Elements)
+        $("#findSiblings").click(function(){
+            $("#li1").siblings().addClass("highlight"); // Selects all siblings
+        });
+
+    });
+    </script>
+</head>
+<body>
+
+    <h2>jQuery Traversing - Parent, Children, Siblings</h2>
+
+    <!-- Example Structure -->
+    <div id="div1" class="box">
+        <ul>
+            <li id="li1" class="box">
+                <span id="span1">Hello!</span>
+            </li>
+            <li class="box"><b>Bold Text</b></li>
+        </ul>
+    </div>
+
+    <!-- Buttons to test Traversing -->
+    <button id="findParent">Find Parent of Span</button>
+    <button id="findAncestors">Find All Ancestors of Span</button>
+    <button id="findChildren">Find Children of Div</button>
+    <button id="findSiblings">Find Siblings of First List Item</button>
+
+</body>
+</html>
