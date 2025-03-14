@@ -13,28 +13,31 @@
 
     // Step 1: Create a new <div> element
     const div = document.createElement('div');
-    console.log(div); // Logs the created <div> element to the console
+    console.log('Created div element:', div);
 
     // Step 2: Assign a class name to the div
     div.className = "main"; 
 
     // Step 3: Generate and assign a random ID (between 1 and 11)
-    div.id = Math.round(Math.random() * 10 + 1); 
+    div.id = Math.floor(Math.random() * 11) + 1; 
 
     // Step 4: Set an attribute (title) for the div element
     div.setAttribute("title", "Generated title");
 
     // Step 5: Apply inline CSS styles to the div
-    div.style.backgroundColor = "green"; // Set background color to green
-    div.style.padding = "12px"; // Add padding for better visibility
+    div.style.backgroundColor = "green"; // Background color
+    div.style.color = "#fff"; // Text color
+    div.style.padding = "12px"; // Padding for better visibility
+    div.style.borderRadius = "8px"; // Rounded corners for better design
+    div.style.textAlign = "center"; // Center the text inside the div
+    div.style.fontSize = "18px"; // Adjust font size
 
     // Step 6: Add text content to the div
-    // Instead of using innerText, we create a text node and append it
-    const addtext = document.createTextNode("Akhil Shetty M"); 
-    div.appendChild(addtext); // Append the text node inside the div
+    const addText = document.createTextNode("Akhil Shetty M"); 
+    div.appendChild(addText);
 
     // Step 7: Append the newly created div to the body of the document
-    document.body.appendChild(div); // This makes the div visible on the webpage
+    document.body.appendChild(div);
 
 </script>
 
