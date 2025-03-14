@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
 </head>
 <body style="background-color: #212121; color: #ffff">
     
-    <!-- Parent container -->
+    <!-- Parent container (currently empty) -->
     <div class="parent"></div>
 
-    <!-- Day elements -->
+    <!-- Day elements (These are outside the 'parent' container) -->
     <div class="day">Monday</div>
     <div class="day">Tuesday</div>
     <div class="day">Wednesday</div>
@@ -20,44 +20,77 @@
 
 <script>
 
-    // Selecting the 'parent' div
+    // Selecting the 'parent' element using querySelector
     const parent = document.querySelector('.parent');
 
-    // Logging the parent element
-    // console.log(parent);
+    // Logs the parent element to the console
+    console.log('Parent Element:', parent);
 
-    // Logging the child elements inside the parent (HTMLCollection)
-    // console.log(parent.children);
+    // Logs all child elements inside the parent as an HTMLCollection
+    console.log('Children of parent:', parent.children);
 
-    // Accessing the second child of the parent
-    // console.log(parent.children[1]);
+    // Accessing a specific child element by index
+    if (parent.children.length > 1) {
+        console.log('Second child:', parent.children[1]);
 
-    // Accessing the inner HTML of the second child
-    // console.log(parent.children[1].innerHTML);
-
-    // Looping through all child elements of parent and logging their content
-    for (let i = 0; i < parent.children.length; i++){
-        console.log(parent.children[i].innerHTML);
+        // Accessing innerHTML of the second child
+        console.log('Second child innerHTML:', parent.children[1].innerHTML);
     }
 
-    // Changing the text color of the second child to orange
-    parent.children[1].style.color = "orange";
+    // Looping through all children of the parent element
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(`Child ${i + 1}:`, parent.children[i].innerHTML);
+    }
 
-    // Logging the first and last child elements of the parent
-    // console.log(parent.firstElementChild);
-    // console.log(parent.lastElementChild);
+    // Changing the text color of the second child (if it exists)
+    if (parent.children.length > 1) {
+        parent.children[1].style.color = "orange";
+    }
 
-    // Selecting the first element with class "day"
+    // Logging the first and last child of the parent
+    console.log('First child:', parent.firstElementChild);
+    console.log('Last child:', parent.lastElementChild);
+
+    // Selecting the first element with the class 'day'
     const dayOne = document.querySelector('.day');
-    console.log(dayOne); // Logs the first ".day" div (Monday)
+    console.log('First .day element:', dayOne);
 
-    // Fixing typo: 'comsole' should be 'console'
-    console.log(dayOne.parentElement); // Logs the parent of 'dayOne'
+    // Accessing the parent of the selected 'day' element
+    console.log('Parent of .day element:', dayOne.parentElement);
 
-    console.log(dayOne.nextElementSibling); // Logs the next sibling (Tuesday)
+    // Accessing the next sibling element of the selected 'day' element
+    console.log('Next sibling of .day:', dayOne.nextElementSibling);
 
-    // Logging all child nodes of the parent, including text nodes (line breaks, spaces)
-    console.log("NODES: ", parent.childNodes); 
+    // Logs all child nodes of the parent (includes elements, text nodes, comments, etc.)
+    console.log('All child nodes of parent:', parent.childNodes);
+
+    // Adding new elements dynamically to the parent
+
+    // Creating a new div element
+    const newDiv = document.createElement('div');
+    newDiv.innerText = 'Newly added child';
+    newDiv.style.color = '#4caf50';
+
+    // Appending the new element to the parent container
+    parent.appendChild(newDiv);
+    console.log('Added new element:', newDiv);
+
+    // Removing the last child from the parent container (if it exists)
+    if (parent.lastElementChild) {
+        parent.removeChild(parent.lastElementChild);
+        console.log('Last child removed');
+    }
+
+    // Replacing an existing child element (if two children exist)
+    if (parent.children.length > 1) {
+        const replacementDiv = document.createElement('div');
+        replacementDiv.innerText = 'Replaced child';
+        replacementDiv.style.color = '#ff5722';
+
+        // Replacing the second child
+        parent.replaceChild(replacementDiv, parent.children[1]);
+        console.log('Replaced second child:', replacementDiv);
+    }
 
 </script>
 
