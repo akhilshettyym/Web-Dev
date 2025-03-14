@@ -1,65 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Manipulation</title>
 
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+            line-height: 1.6;
+        }
+
         .bg-black {
-            background-color: black;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .list-item {
+            margin-bottom: 10px;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .list-item:hover {
+            background-color: #444;
+        }
+
+        button {
+            background-color: #4caf50;
             color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
-<body class="bg-black">
-    <div>
+<body>
+    <div class="bg-black">
         <h1 id="title" class="heading">DOM Learnings <span>test text</span></h1>
         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+
         <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, velit?</p>
 
-        <ul>
+        <ul id="list">
             <li class="list-item">Item 1</li>
             <li class="list-item">Item 2</li>
             <li class="list-item">Item 3</li>
         </ul>
+
+        <button id="addItemBtn">Add New Item</button>
+        <button id="removeItemBtn">Remove Last Item</button>
     </div>
 
     <script>
-        // Get an element by ID
-        const title = document.getElementById("title");
-        console.log("getElementById:", title.innerText);
+        //  Get element by ID
+        const title = document.getElementById('title');
+        console.log('getElementById:', title.innerText);
 
-        // Get elements by class name (returns an HTMLCollection)
-        const headings = document.getElementsByClassName("heading");
-        console.log("getElementsByClassName:", headings[0].innerText);
+        //  Get elements by class name
+        const headings = document.getElementsByClassName('heading');
+        console.log('getElementsByClassName:', headings[0].innerText);
 
-        // Get elements by tag name (returns an HTMLCollection)
-        const h2Elements = document.getElementsByTagName("h2");
-        console.log("getElementsByTagName:", h2Elements.length, "h2 elements found");
+        //  Get elements by tag name
+        const h2Elements = document.getElementsByTagName('h2');
+        console.log('getElementsByTagName:', h2Elements.length, 'h2 elements found');
 
-        // Get an element using querySelector (returns the first match)
-        const firstListItem = document.querySelector(".list-item");
-        console.log("querySelector:", firstListItem.innerText);
+        //  Get element using querySelector
+        const firstListItem = document.querySelector('.list-item');
+        console.log('querySelector:', firstListItem.innerText);
 
-        // Get all elements using querySelectorAll (returns a NodeList)
-        const allListItems = document.querySelectorAll(".list-item");
-        console.log("querySelectorAll:", allListItems.length, "list items found");
+        //  Get all elements using querySelectorAll
+        const allListItems = document.querySelectorAll('.list-item');
+        console.log('querySelectorAll:', allListItems.length, 'list items found');
 
-        // Get an element by its attribute (example: selecting by ID)
-        const paragraph = document.querySelector("[id='para']");
-        console.log("getElementByAttribute (querySelector by ID):", paragraph.innerText);
+        //  Get element by attribute
+        const paragraph = document.querySelector('[id="para"]');
+        console.log('querySelector by ID:', paragraph.innerText);
 
-        // Demonstrating innerText, innerHTML, and textContent
-        console.log("innerText:", title.innerText); // Only visible text
-        console.log("innerHTML:", title.innerHTML); // Includes HTML tags inside the element
-        console.log("textContent:", title.textContent); // Includes all text (including hidden)
+        //  Demonstrating innerText, innerHTML, and textContent
+        console.log('innerText:', title.innerText); // Only visible text
+        console.log('innerHTML:', title.innerHTML); // Includes HTML tags inside the element
+        console.log('textContent:', title.textContent); // Includes all text (including hidden)
 
-        // Modifying the DOM
-        title.innerText = "Updated DOM Learnings"; // Updates text content
-        paragraph.innerHTML = "<strong>Updated paragraph with bold text.</strong>"; // Changes inner HTML
+        //  Modifying the DOM content
+        title.innerText = 'Updated DOM Learnings';
+        paragraph.innerHTML = '<strong>Updated paragraph with bold text.</strong>';
+
+        //  Adding and Removing Elements
+        const list = document.getElementById('list');
+        const addItemBtn = document.getElementById('addItemBtn');
+        const removeItemBtn = document.getElementById('removeItemBtn');
+
+        // Function to add a new list item
+        addItemBtn.addEventListener('click', () => {
+            const newItem = document.createElement('li');
+            newItem.classList.add('list-item');
+            newItem.innerText = `Item ${list.children.length + 1}`;
+            list.appendChild(newItem);
+            console.log(`Added: ${newItem.innerText}`);
+        });
+
+        // Function to remove the last list item
+        removeItemBtn.addEventListener('click', () => {
+            if (list.children.length > 0) {
+                const lastItem = list.lastElementChild;
+                console.log(`Removed: ${lastItem.innerText}`);
+                list.removeChild(lastItem);
+            } else {
+                console.log('No items left to remove!');
+            }
+        });
+
+        //  Event Listener Example
+        allListItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                alert(`You clicked on: ${item.innerText}`);
+            });
+        });
+
+        //  Styling Changes Example
+        title.style.color = '#ff5722';
+        title.style.fontSize = '28px';
     </script>
 </body>
 </html>
