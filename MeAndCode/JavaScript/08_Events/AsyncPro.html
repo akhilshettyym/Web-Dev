@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+</head>
+<body>
+    <!-- Main heading -->
+    <h1>Me and Code</h1>
+
+    <!-- Button to stop the setTimeout execution -->
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // Function to log a message to the console
+    const sayAkhil = function () {
+        console.log("Akhil");
+    };
+
+    // Function to change the innerHTML of the h1 element
+    const changeText = function () {
+        document.querySelector("h1").innerHTML = "Akhil is best";
+    };
+
+    // Set a timeout to execute the changeText function after 2 seconds
+    const changeMe = setTimeout(changeText, 2000);
+
+    // Add an event listener to the button with id 'stop'
+    document.querySelector("#stop").addEventListener("click", function () {
+        // Stop the execution of the scheduled timeout
+        clearTimeout(changeMe);
+        console.log("STOPPED");
+    });
+</script>
+</html>
