@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #f4f4f4; color: #333; font-family: Arial, sans-serif;">
+
+    <!-- Container for the heading and list -->
+    <div>
+        <h2>Amazing Images</h2>
+        <ul id="images" style="list-style-type: none; padding: 0;">
+            <li>
+                <img id="img1" src="https://via.placeholder.com/150" alt="Image 1" width="150">
+            </li>
+            <li>
+                <img id="img2" src="https://via.placeholder.com/150" alt="Image 2" width="150">
+            </li>
+            <li>
+                <img id="img3" src="https://via.placeholder.com/150" alt="Image 3" width="150">
+            </li>
+            <li>
+                <img id="img4" src="https://via.placeholder.com/150" alt="Image 4" width="150">
+            </li>
+            <li>
+                <a href="https://example.com" id="img5-link">
+                    <img id="img5" src="https://via.placeholder.com/150" alt="Image 5" width="150">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+<script>
+
+    /**
+     *  Example 1: Using addEventListener for event handling
+     * - `false` = Bubbling phase (event starts from the target and bubbles up)
+     */
+    document.getElementById('img1').addEventListener('click', function(e) {
+        console.log("Clicked inside the ul");
+    }, false);
+
+    /**
+     *  Example 2: Stopping event propagation (bubbling phase)
+     * - `stopPropagation()` prevents the event from bubbling up
+     */
+    document.getElementById('img1').addEventListener('click', function(e) {
+        console.log("img1 clicked");
+        e.stopPropagation(); // Stops bubbling phase
+    }, false);
+
+    /**
+     *  Example 3: Capturing phase (event starts from the parent and goes to the target)
+     * - `true` = Capturing phase
+     */
+    document.getElementById('img1').addEventListener('click', function(e) {
+        console.log("img1 clicked (capturing phase)");
+    }, true);
+
+    /**
+     *  Example 4: Prevent default behavior of a link
+     * - `preventDefault()` prevents the link from navigating
+     */
+    document.getElementById('img5').addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent link from opening
+        e.stopPropagation(); // Stop bubbling phase
+        console.log("img5 clicked");
+    }, false);
+
+    /**
+     *  Example 5: Event delegation
+     * - Using event delegation to target dynamically added elements
+     * - This works because the parent `#images` listens to all child clicks
+     */
+    document.querySelector('#images').addEventListener('click', function(e) {
+        console.log(e.target.tagName); // Logs the tag name of the clicked element
+
+        // Remove the clicked image's parent <li> if it's an IMG
+        if (e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode;
+            removeIt.remove(); // Removes the parent node of the clicked image
+        }
+    });
+
+</script>
+</html>
