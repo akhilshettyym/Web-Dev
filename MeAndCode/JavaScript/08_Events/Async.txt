@@ -1,0 +1,240 @@
+🚀 Async JavaScript Fundamentals
+In JavaScript, asynchronous programming allows you to execute non-blocking operations, meaning that the program can continue executing while waiting for other operations (like network requests, file loading, or timers) to complete.
+
+🌟 Why Async?
+JavaScript is single-threaded — it can only execute one task at a time.
+Async allows:
+Handling time-consuming tasks (e.g., API calls) without freezing the browser.
+Efficient execution through callbacks, promises, and async/await.
+📌 1. Callbacks
+A callback is a function passed as an argument to another function and is executed after the completion of that function.
+
+✅ Example: Callback Function
+javascript
+Copy
+Edit
+function fetchData(callback) {
+    setTimeout(() => {
+        console.log("Data fetched");
+        callback(); // Execute the callback after fetching data
+    }, 2000);
+}
+
+fetchData(() => {
+    console.log("Callback executed");
+});
+🔥 How it works:
+fetchData() is called.
+setTimeout delays execution for 2 seconds.
+After 2 seconds, "Data fetched" is logged.
+The callback is called → "Callback executed" is logged.
+❌ Callback Hell (Pyramid of Doom)
+Nesting callbacks can make code hard to read and maintain.
+javascript
+Copy
+Edit
+setTimeout(() => {
+    console.log("Step 1");
+    setTimeout(() => {
+        console.log("Step 2");
+        setTimeout(() => {
+            console.log("Step 3");
+        }, 1000);
+    }, 1000);
+}, 1000);
+➡️ Solution → Use Promises or async/await.
+
+📌 2. Promises
+A Promise is an object representing the eventual completion or failure of an asynchronous operation.
+
+✅ Creating a Promise
+javascript
+Copy
+Edit
+const getData = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let success = true;
+        if (success) {
+            resolve("Data fetched successfully");
+        } else {
+            reject("Error fetching data");
+        }
+    }, 2000);
+});
+
+getData
+    .then((data) => {
+        console.log(data); // "Data fetched successfully"
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+✅ Promise States
+Pending – Initial state, neither fulfilled nor rejected.
+Fulfilled – The operation was successful.
+Rejected – The operation failed.
+✅ Chaining Promises
+You can chain .then() to handle multiple steps sequentially.
+
+javascript
+Copy
+Edit
+getData
+    .then((data) => {
+        console.log(data);
+        return "Processing data...";
+    })
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    });
+📌 3. Async/Await
+async/await is a cleaner way to handle asynchronous code using Promises.
+
+✅ Example: Using async/await
+javascript
+Copy
+Edit
+const fetchData = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let success = true;
+            if (success) {
+                resolve("Data fetched");
+            } else {
+                reject("Failed to fetch data");
+            }
+        }, 2000);
+    });
+};
+
+const getData = async () => {
+    try {
+        const data = await fetchData(); // Waits until fetchData() resolves
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+getData();
+🔥 How it works:
+fetchData returns a Promise.
+await pauses the execution until the Promise is resolved.
+If resolved → data is assigned.
+If rejected → catch handles the error.
+📌 4. Promise.all()
+Use Promise.all() to run multiple promises in parallel and wait for all to complete.
+
+✅ Example:
+javascript
+Copy
+Edit
+const p1 = new Promise((resolve) => setTimeout(() => resolve("P1 done"), 1000));
+const p2 = new Promise((resolve) => setTimeout(() => resolve("P2 done"), 2000));
+const p3 = new Promise((resolve) => setTimeout(() => resolve("P3 done"), 1500));
+
+Promise.all([p1, p2, p3])
+    .then((results) => console.log(results)) // ["P1 done", "P2 done", "P3 done"]
+    .catch((error) => console.log(error));
+📌 5. Promise.race()
+Promise.race() returns the result of the first Promise to settle (either resolved or rejected).
+
+✅ Example:
+javascript
+Copy
+Edit
+Promise.race([
+    new Promise((resolve) => setTimeout(() => resolve("P1 done"), 1000)),
+    new Promise((resolve) => setTimeout(() => resolve("P2 done"), 500))
+])
+.then((result) => console.log(result)) // "P2 done"
+.catch((error) => console.log(error));
+📌 6. Promise.allSettled()
+Promise.allSettled() waits for all Promises to settle (either resolved or rejected).
+
+✅ Example:
+javascript
+Copy
+Edit
+Promise.allSettled([
+    Promise.resolve("Resolved Promise"),
+    Promise.reject("Rejected Promise"),
+    Promise.resolve("Another resolved")
+]).then((results) => console.log(results));
+🔥 Output:
+javascript
+Copy
+Edit
+[
+  { status: "fulfilled", value: "Resolved Promise" },
+  { status: "rejected", reason: "Rejected Promise" },
+  { status: "fulfilled", value: "Another resolved" }
+]
+📌 7. Error Handling
+✅ Try-Catch with Async/Await
+If an async function throws an error, you can catch it using try...catch.
+
+javascript
+Copy
+Edit
+const getData = async () => {
+    try {
+        const res = await fetch("https://invalid-url");
+        const data = await res.json();
+        console.log(data);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+};
+
+getData();
+🔥 Best Practices
+✅ Always handle errors with .catch() or try...catch.
+✅ Use async/await over nested .then() chains for cleaner code.
+✅ Use Promise.all() or Promise.race() when handling multiple promises.
+✅ Clean up resources or state changes in finally() when necessary.
+
+🚀 Complete Example
+A complete example using async/await, Promise.all(), and error handling:
+
+javascript
+Copy
+Edit
+const fetchData = async (url) => {
+    try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Failed to fetch");
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        throw error;
+    }
+};
+
+const getAllData = async () => {
+    try {
+        const [userData, postData] = await Promise.all([
+            fetchData('https://jsonplaceholder.typicode.com/users/1'),
+            fetchData('https://jsonplaceholder.typicode.com/posts/1')
+        ]);
+        console.log("User Data:", userData);
+        console.log("Post Data:", postData);
+    } catch (error) {
+        console.log("Failed to load data");
+    }
+};
+
+getAllData();
+🏆 Summary
+Method	Use Case
+Callbacks	Simple async tasks, but can cause callback hell
+Promises	Handle async tasks more cleanly, chaining is possible
+async/await	Cleanest syntax, works with Promises
+Promise.all()	Run multiple promises in parallel and wait for all to complete
+Promise.race()	Returns the first settled promise
+Promise.allSettled()	Wait for all promises to settle
+🔥 Mastering async = Writing better, faster, and more scalable code! 😎
