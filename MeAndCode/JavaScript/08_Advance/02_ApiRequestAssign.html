@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Profile</title>
+</head>
+<body style="background-color: #f4f4f4; font-family: Arial, sans-serif; text-align: center; padding: 20%;">
+
+    <!-- Container to display profile details -->
+    <div id="profile-container">
+        <!-- Profile image will be inserted here -->
+        <img id="profile-pic" src="" alt="GitHub Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 10px;">
+
+        <!-- Repositories count will be inserted here -->
+        <h3 id="repo-count"></h3>
+    </div>
+
+    <script>
+        // Define the URL for the GitHub API request
+        const requestURL = "https://api.github.com/users/akhilshettyym";
+
+        // Create a new XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+
+        // Open a GET request to the specified URL
+        xhr.open('GET', requestURL);
+
+        // Define the event handler for when the readyState changes
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState);
+
+            // When the request is complete (readyState === 4)
+            if (xhr.readyState === 4) {
+                // Parse the response JSON data
+                const data = JSON.parse(this.responseText);
+
+                // Log the fetched data to the console
+                console.log(data);
+
+                // Set the profile picture using the "avatar_url" from the API response
+                document.getElementById('profile-pic').src = data.avatar_url;
+
+                // Display the number of public repositories
+                document.getElementById('repo-count').innerText = `Public Repositories: ${data.public_repos}`;
+            }
+        };
+
+        // Send the request to the server
+        xhr.send();
+    </script>
+</body>
+</html>
