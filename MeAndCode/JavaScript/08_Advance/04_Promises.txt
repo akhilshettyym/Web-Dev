@@ -1,0 +1,65 @@
+What Are Promises?
+A Promise is a special JavaScript object that represents the eventual completion (or failure) of an asynchronous operation and allows you to handle the result once it's ready.
+-----------------------------------------------------------------------------------------------------
+Why Promises Are Needed - 
+- JavaScript is single-threaded — it can only execute one task at a time.
+- When you perform a task that takes time (like fetching data from a server), you don’t want to block other operations while waiting for the result.
+- Promises allow JavaScript to continue running other code while waiting for the result of the asynchronous operation.
+-----------------------------------------------------------------------------------------------------
+If you run the following code:
+
+const data = fetchDataFromServer();     // Takes 5 seconds
+console.log(data);                      // This will execute before data is ready
+
+The problem is that fetchDataFromServer() takes time, but console.log(data) runs immediately — before the data is ready.
+-----------------------------------------------------------------------------------------------------
+How Promises Solve This Problem - 
+A Promise allows you to say:
+"Start the task, and when it’s done (whether success or failure), then handle the result."
+-----------------------------------------------------------------------------------------------------
+Promise States
+A Promise can be in three states:
+
+Pending → The task is still running (not completed).
+Resolved (Fulfilled) → The task is complete, and the promise returns a value.
+Rejected → The task failed, and the promise returns an error.
+-----------------------------------------------------------------------------------------------------
+How It Works:
+setTimeout() starts an asynchronous task.
+If success is true, the promise is resolved after 2 seconds → then() is called.
+If success is false, the promise is rejected → catch() is called.
+-----------------------------------------------------------------------------------------------------
+What is .then()?
+.then() is used to handle the result of a promise if it’s resolved.
+It takes a callback function that receives the resolved value.
+ 
+What is .catch()?
+.catch() is used to handle errors if the promise is rejected.
+It receives the error message as an argument.
+
+What is .finally()?
+.finally() is executed after the promise is either resolved or rejected.
+It’s useful for cleanup tasks (like hiding a loading spinner).
+-----------------------------------------------------------------------------------------------------
+myPromise
+    .then((result) => console.log(result))
+    .catch((error) => console.log(error))
+    .finally(() => console.log("Promise has settled"));
+-----------------------------------------------------------------------------------------------------
+async function handlePromise() {
+    try {
+        const result = await myPromise;
+        console.log(result);
+    } catch (error) {
+        console.log(error);
+    } finally {
+        console.log("Promise has settled");
+    }
+}
+handlePromise();
+
+How It Works:
+await waits for the promise to complete.
+If it’s resolved → the value is assigned to result.
+If it’s rejected → the error is caught in catch.
+-----------------------------------------------------------------------------------------------------
