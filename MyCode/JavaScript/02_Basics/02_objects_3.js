@@ -9,8 +9,8 @@ const course = {
 const { courseInstructor } = course;
 const { courseName: name } = course;  // Renaming courseName to 'name'
 
-console.log(courseInstructor); // ✅ "Akhil"
-console.log(name);            // ✅ "Js crash"
+console.log(courseInstructor); //  "Akhil"
+console.log(name);            // "Js crash"
 
 // How It Works
 // Destructuring takes the property of the object and assigns it to a variable with the same name.
