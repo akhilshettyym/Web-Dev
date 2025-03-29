@@ -89,3 +89,18 @@ function App() {
 }
 export default App;
 
+What's Next?
+
+Now that you have a React environment on your computer, you are ready to learn more about React.
+
+If you want to follow along, start by simplifying your src folder to contain only index.js. It should look like this:
+
+Example:
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+const myFirstElement = <h1>Hello React!</h1>;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myFirstElement);
