@@ -1,0 +1,62 @@
+Setting Up React
+
+To use React in production, you need npm, which is included with Node.js.
+
+To get an overview of React, you can write React code directly in HTML. However, for production use, installing Node.js and npm is necessary.
+
+React Directly in HTML
+
+The quickest way to start learning React is to write React code directly in your HTML files.
+
+Example:
+
+Include three CDN links in your HTML file:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="mydiv"></div>
+    <script type="text/babel">
+      function Hello() {
+        return <h1>Hello World!</h1>;
+      }
+      const container = document.getElementById('mydiv');
+      const root = ReactDOM.createRoot(container);
+      root.render(<Hello />);
+    </script>
+  </body>
+</html>
+
+This method is fine for testing but not recommended for production.
+
+Setting Up a React Environment
+
+If you have npx and Node.js installed, you can create a React application using create-react-app.
+
+Steps:
+
+If you've previously installed create-react-app globally, uninstall it:
+npm uninstall -g create-react-app
+
+Create a new React app:
+npx create-react-app my-react-app
+
+Navigate to your project directory:
+cd my-react-app
+
+Start the application:
+npm start
+
+A new browser window will pop up with your React App. If not, visit localhost:3000.
+
+A new browser window will pop up with your React App. If not, visit localhost:3000.
+
+Modifying a React Application
+
+Locate the src/App.js file inside your React project. By default, it looks like this:
+
