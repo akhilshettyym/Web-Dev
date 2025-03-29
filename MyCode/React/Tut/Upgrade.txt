@@ -1,0 +1,45 @@
+Upgrading to React 18
+
+If you are using an older version of React, you can upgrade to React 18 by following these steps:
+
+Step 1: Install React 18
+
+Run the following command in your project folder:
+
+npm i react@latest react-dom@latest
+
+Step 2: Use the New Root API
+
+To take advantage of React 18's concurrent features, update the root rendering method in index.js:
+
+Before:
+
+import ReactDOM from 'react-dom';
+ReactDOM.render(<App />, document.getElementById('root'));
+
+After:
+
+import ReactDOM from 'react-dom/client';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+Your application will still work without using the new root API, but it will behave like React 17 if you continue using ReactDOM.render.
+
+What's Next?
+
+Now that you have a React environment on your computer, you are ready to learn more about React.
+
+If you want to follow along, start by simplifying your src folder to contain only index.js. It should look like this:
+
+Example:
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+const myFirstElement = <h1>Hello React!</h1>;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myFirstElement);
+
+This will serve as the foundation for building more complex React applications.
+
