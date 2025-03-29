@@ -1,0 +1,30 @@
+Learn React
+
+Introduction
+
+React is a JavaScript library for building user interfaces. It is widely used to build single-page applications and allows developers to create reusable UI components.
+
+How Does React Work?
+
+React creates a Virtual DOM in memory. Instead of manipulating the browser's DOM directly, React updates the Virtual DOM first and then syncs only the necessary changes to the real DOM. This process makes React fast and efficient.
+
+React.JS History
+
+Current version of React.JS is V18.0.0 (April 2022).
+
+Initial Release to the Public (V0.3.0) was in July 2013.
+
+React.JS was first used in 2011 for Facebook's Newsfeed feature.
+
+Facebook Software Engineer, Jordan Walke, created it.
+
+Current version of create-react-app is v5.0.1 (April 2022).
+
+create-react-app includes built-in tools such as Webpack, Babel, and ESLint.
+
+Learning by Examples
+
+Our "Show React" tool makes it easy to demonstrate React. It shows both the code and the result.
+
+
+
