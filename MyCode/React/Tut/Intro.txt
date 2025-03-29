@@ -1,0 +1,19 @@
+Introduction
+
+React is a JavaScript library for building user interfaces. It is widely used to build single-page applications and allows developers to create reusable UI components.
+
+Learning by Examples
+
+Our "Show React" tool makes it easy to demonstrate React. It shows both the code and the result.
+
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+function Hello(props) {
+  return <h1>Hello World!</h1>;
+}
+
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(<Hello />);
