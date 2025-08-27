@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +11,30 @@
             margin: 20px;
             text-align: center;
         }
+
         table {
             width: 90%;
             margin: 20px auto;
             border-collapse: collapse;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
+
         th {
             background-color: #003366;
             color: white;
         }
+
         input[type="number"] {
             width: 50px;
             text-align: center;
         }
+
         .checkout-btn {
             background-color: #b40000;
             color: white;
@@ -37,105 +44,119 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         .checkout-btn:hover {
             background-color: #441818;
         }
     </style>
 </head>
+
 <body>
     <h2>SHOPPING CART</h2>
     <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Cart</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
+    <html lang="en">
 
-    <table id="cart-table">
-        <thead>
-            <tr>
-                <th>Item</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Wall Mounting Fan</td>
-                <td><input type="number" value="1" min="1" class="quantity" data-price="100" oninput="updateTotal(this)"></td>
-                <td>$100</td>
-                <td class="total">$100</td>
-            </tr>
-            <tr>
-                <td>Evacuation Stair Chair</td>
-                <td><input type="number" value="2" min="1" class="quantity" data-price="150" oninput="updateTotal(this)"></td>
-                <td>$150</td>
-                <td class="total">$300</td>
-            </tr>
-            <tr>
-                <td>Industrial Ventilation Fan</td>
-                <td><input type="number" value="1" min="1" class="quantity" data-price="200" oninput="updateTotal(this)"></td>
-                <td>$200</td>
-                <td class="total">$200</td>
-            </tr>
-            <tr>
-                <td>Industrial Goods Handler</td>
-                <td><input type="number" value="2" min="1" class="quantity" data-price="250" oninput="updateTotal(this)"></td>
-                <td>$250</td>
-                <td class="total">$500</td>
-            </tr>
-            <tr>
-                <td>Industrial Liquid Container</td>
-                <td><input type="number" value="2" min="1" class="quantity" data-price="300" oninput="updateTotal(this)"></td>
-                <td>$300</td>
-                <td class="total">$600</td>
-            </tr>
-            <tr>
-                <td>Industrial Safety Motor</td>
-                <td><input type="number" value="2" min="1" class="quantity" data-price="350" oninput="updateTotal(this)"></td>
-                <td>$350</td>
-                <td class="total">$700</td>
-            </tr>
-        </tbody>
-    </table>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic Cart</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
 
-    <h3>Grand Total: <span id="grand-total">$2400</span></h3>
+            th,
+            td {
+                padding: 10px;
+                border: 1px solid #ddd;
+                text-align: center;
+            }
+        </style>
+    </head>
 
-    <script>
-        function updateTotal(input) {
-            let row = input.closest("tr");
-            let price = parseFloat(input.getAttribute("data-price"));
-            let quantity = parseInt(input.value) || 1;
-            let total = price * quantity;
-            row.querySelector(".total").innerText = "$" + total.toFixed(2);
-            updateGrandTotal();
-        }
+    <body>
 
-        function updateGrandTotal() {
-            let grandTotal = 0;
-            document.querySelectorAll(".total").forEach(cell => {
-                grandTotal += parseFloat(cell.innerText.replace("$", "")) || 0;
-            });
-            document.getElementById("grand-total").innerText = "$" + grandTotal.toFixed(2);
-        }
-    </script>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wall Mounting Fan</td>
+                    <td><input type="number" value="1" min="1" class="quantity" data-price="100"
+                            oninput="updateTotal(this)"></td>
+                    <td>$100</td>
+                    <td class="total">$100</td>
+                </tr>
+                <tr>
+                    <td>Evacuation Stair Chair</td>
+                    <td><input type="number" value="2" min="1" class="quantity" data-price="150"
+                            oninput="updateTotal(this)"></td>
+                    <td>$150</td>
+                    <td class="total">$300</td>
+                </tr>
+                <tr>
+                    <td>Industrial Ventilation Fan</td>
+                    <td><input type="number" value="1" min="1" class="quantity" data-price="200"
+                            oninput="updateTotal(this)"></td>
+                    <td>$200</td>
+                    <td class="total">$200</td>
+                </tr>
+                <tr>
+                    <td>Industrial Goods Handler</td>
+                    <td><input type="number" value="2" min="1" class="quantity" data-price="250"
+                            oninput="updateTotal(this)"></td>
+                    <td>$250</td>
+                    <td class="total">$500</td>
+                </tr>
+                <tr>
+                    <td>Industrial Liquid Container</td>
+                    <td><input type="number" value="2" min="1" class="quantity" data-price="300"
+                            oninput="updateTotal(this)"></td>
+                    <td>$300</td>
+                    <td class="total">$600</td>
+                </tr>
+                <tr>
+                    <td>Industrial Safety Motor</td>
+                    <td><input type="number" value="2" min="1" class="quantity" data-price="350"
+                            oninput="updateTotal(this)"></td>
+                    <td>$350</td>
+                    <td class="total">$700</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Grand Total: <span id="grand-total">$2400</span></h3>
+
+        <script>
+            function updateTotal(input) {
+                let row = input.closest("tr");
+                let price = parseFloat(input.getAttribute("data-price"));
+                let quantity = parseInt(input.value) || 1;
+                let total = price * quantity;
+                row.querySelector(".total").innerText = "$" + total.toFixed(2);
+                updateGrandTotal();
+            }
+
+            function updateGrandTotal() {
+                let grandTotal = 0;
+                document.querySelectorAll(".total").forEach(cell => {
+                    grandTotal += parseFloat(cell.innerText.replace("$", "")) || 0;
+                });
+                document.getElementById("grand-total").innerText = "$" + grandTotal.toFixed(2);
+            }
+        </script>
+
+    </body>
+
+    </html>
 
 </body>
-</html>
 
-</body>
 </html>

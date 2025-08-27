@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
@@ -13,7 +15,7 @@
     </header>
 
     <div class="container">
-        
+
         <div class="contact-info">
             <div>
                 <h3>Company Address</h3>
@@ -29,25 +31,25 @@
             </div>
         </div><br><br>
 
-        
-        
+
+
         <form onsubmit="return validateForm()">
-            
+
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <br>
 
-            
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             <br>
 
-            
+
             <label for="phone">Phone:</label>
             <input type="tel" id="phone" name="phone" required>
             <br>
 
-            
+
             <label for="message">Message:</label>
             <textarea id="message" name="message" required minlength="10"></textarea>
             <br>
@@ -57,25 +59,25 @@
     </div><br>
 
     <script>
-        function validateForm(){
+        function validateForm() {
             let name = document.getElementById("name").value;
             let email = document.getElementById("email").value;
             let phone = document.getElementById("phone").value;
             let message = document.getElementById("message").value;
 
             let nameRegex = /^[A-Za-z ]+$/;
-            if (!nameRegex.test(name)){
+            if (!nameRegex.test(name)) {
                 alert("Please enter a valid name (Letters only)");
                 return false;
             }
 
             let phoneRegex = /^[0-9]+$/;
-            if (!phoneRegex.test(phone)){
+            if (!phoneRegex.test(phone)) {
                 alert("Please enter a valid mobile number (Numbers only)");
                 return false;
             }
 
-            if (message.length < 10){
+            if (message.length < 10) {
                 alert("The message must be atleast 10 characters long");
                 return false;
             }
@@ -83,9 +85,9 @@
             alert("Form Submitted Successfully !!!");
             return true;
         }
-     </script>
+    </script>
 
-     <footer>
+    <footer>
         <ul>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
@@ -95,4 +97,5 @@
         <p>&copy; 2025 Global Industrial Private Limited. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
