@@ -1,39 +1,40 @@
-form {  
-    background-color: #dedede;  
-    padding: 20px;  
-    border-radius: 10px;  
-    box-shadow: 0px 0px 10px rgba(42, 13, 13, 0.1);  
-    width: 90%;  
-    margin: auto;  
-}  
+form {
+    background-color: #dedede;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(42, 13, 13, 0.1);
+    width: 90%;
+    margin: auto;
+}
 
-label {  
-    font-weight: bold;  
-    display: block;  
-    margin: 5px 0;  
-}  
+label {
+    font-weight: bold;
+    display: block;
+    margin: 5px 0;
+}
 
-input, textarea {  
-    width: 90%;  
-    padding: 10px;  
-    margin: 5px 0 10px;  
-    border: 1px solid #020202;  
-    border-radius: 5px;  
-}  
+input,
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #020202;
+    border-radius: 5px;
+}
 
-button {  
-    background-color: #909090;  
-    color: white;  
-    padding: 20px 45px;  
-    border: none;  
-    border-radius: 10px;  
-    cursor: pointer;  
-    display: block;  
-    margin: auto;  
-}  
+button {
+    background-color: #909090;
+    color: white;
+    padding: 20px 45px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+}
 
-button:hover {  
-    background-color: #362828;  
+button:hover {
+    background-color: #362828;
 }
 
 
@@ -46,7 +47,8 @@ table {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-th, td {
+th,
+td {
     border: 1px solid #827777;
     padding: 10px;
     text-align: center;
@@ -58,7 +60,8 @@ th {
 }
 
 
-ul, ol {
+ul,
+ol {
     background-color: white;
     padding: 25px;
     border-radius: 5px;
@@ -67,7 +70,8 @@ ul, ol {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-ul li, ol li {
+ul li,
+ol li {
     margin: 5px 0;
 }
 

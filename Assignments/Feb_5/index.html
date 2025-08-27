@@ -1,6 +1,7 @@
-<!DOCTYPE html>                 
-<html lang="en">                
-<head>                          
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple webpage</title>
@@ -9,20 +10,24 @@
 
     <!-- Internal CSS -->
     <style>
-        body, h1, h2, p, nav a {
+        body,
+        h1,
+        h2,
+        p,
+        nav a {
             margin: 0;
             padding: 0;
         }
 
-        body{
+        body {
             font-family: Georgia, 'Times New Roman', Times, serif;
             line-height: 1.6;
             background-color: rgb(248, 248, 248);
-            color:#333;
+            color: #333;
             padding: 20px;
         }
 
-        header{
+        header {
             background-color: #000000c5;
             color: #fff;
             text-align: center;
@@ -37,7 +42,8 @@
 
         nav {
             display: flex;
-            justify-content: center; /* Centers the nav links */
+            justify-content: center;
+            /* Centers the nav links */
             background-color: #1716167d;
             padding: 10px;
             gap: 15px;
@@ -88,41 +94,50 @@
             height: auto;
             border-radius: 10px;
         }
-
     </style>
 
 </head>
+
 <body>
 
-    <!-- Header -->   <!-- To add an heading -->
-     <header>
-     <h1>We Supply That</h1>
+    <!-- Header --> <!-- To add an heading -->
+    <header>
+        <h1>We Supply That</h1>
     </header>
 
     <!-- Navigation -->
-     <nav>
+    <nav>
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Services</a>
         <a href="#">Contact</a>
-     </nav>
+    </nav>
 
-     <!-- Main -->
-      <main>
+    <!-- Main -->
+    <main>
         <br>
-        
+
         <h2>Content</h2>
         <div class="content-container" style="display: flex; align-items: center; gap: 20px;">
             <div class="text-content" style="flex: 1;">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus sequi rem odio fugit fugiat. Aperiam, aliquid ab optio soluta obcaecati voluptates voluptatibus nisi excepturi tempora, earum aspernatur eligendi eum ducimus.</p>
-                <p style="text-align: justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid hic, id placeat molestias, itaque voluptas odio nostrum ullam qui quod architecto asperiores. Est rerum quo recusandae nisi? Iste facilis eius rerum voluptas quo, dolor quisquam illo nam tempora placeat, consectetur tempore. Exercitationem dolores, sit unde similique doloribus dolorem, tempore dolore cupiditate pariatur sed natus blanditiis, incidunt reprehenderit! Eius assumenda aperiam quo harum dicta ea quasi aut ad, impedit sunt a magnam unde, repellendus explicabo nihil. Minima dolores aspernatur officia mollitia consectetur tempora ad, consequuntur qui animi culpa, maiores fugit. Saepe dolore a illum assumenda magnam ipsum, molestias animi corrupti.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus sequi rem odio fugit fugiat.
+                    Aperiam, aliquid ab optio soluta obcaecati voluptates voluptatibus nisi excepturi tempora, earum
+                    aspernatur eligendi eum ducimus.</p>
+                <p style="text-align: justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid
+                    hic, id placeat molestias, itaque voluptas odio nostrum ullam qui quod architecto asperiores. Est
+                    rerum quo recusandae nisi? Iste facilis eius rerum voluptas quo, dolor quisquam illo nam tempora
+                    placeat, consectetur tempore. Exercitationem dolores, sit unde similique doloribus dolorem, tempore
+                    dolore cupiditate pariatur sed natus blanditiis, incidunt reprehenderit! Eius assumenda aperiam quo
+                    harum dicta ea quasi aut ad, impedit sunt a magnam unde, repellendus explicabo nihil. Minima dolores
+                    aspernatur officia mollitia consectetur tempora ad, consequuntur qui animi culpa, maiores fugit.
+                    Saepe dolore a illum assumenda magnam ipsum, molestias animi corrupti.</p>
             </div>
-        
+
             <div class="image-content" style="flex-shrink: 0;">
                 <img src="Image.jpeg" alt="pocket tel" style="width: 300px; height: auto; border-radius: 10px;">
             </div>
         </div>
-        
+
 
         <h2>Contact Us :</h2><br>
         <form onsubmit="return validateForm()">
@@ -152,7 +167,7 @@
 
         <h2>Product Details :</h2>
         <!-- Table structure -->
-         <table>
+        <table>
             <thead>
                 <tr>
                     <th>Product Name</th>
@@ -187,23 +202,23 @@
                 </tr>
 
             </tbody>
-         </table><br>
+        </table><br>
 
 
-         <h2>Product Categories :</h2>
-    
-            <!-- Unordered List -->
-            <ul>
-                <li>Electronics</li>
-                <li>Clothing</li>
-                <li>Home Appliances</li>
-                <li>Books</li>
-                <li>Sports Equipment</li>
-            </ul><br>
-        
-    
+        <h2>Product Categories :</h2>
+
+        <!-- Unordered List -->
+        <ul>
+            <li>Electronics</li>
+            <li>Clothing</li>
+            <li>Home Appliances</li>
+            <li>Books</li>
+            <li>Sports Equipment</li>
+        </ul><br>
+
+
         <h2>How can we Purchase a Product :</h2>
-    
+
         <!-- Ordered List -->
         <ol>
             <li>Browse thru product categories and select a product which u want.</li>
@@ -215,47 +230,48 @@
         </ol>
 
 
-        </main>
+    </main>
 
-             <script>
-                function validateForm(){
-                    let name = document.getElementById("name").value;
-                    let email = document.getElementById("email").value;
-                    let phone = document.getElementById("phone").value;
-                    let message = document.getElementById("message").value;
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let message = document.getElementById("message").value;
 
-                    //Name validation
-                    let nameRegex = /^[A-Za-z ]+$/;
-                    if (!nameRegex.test(name)){
-                        alert("Please enter a valid name (Letters only)");
-                        return false;
-                    }
+            //Name validation
+            let nameRegex = /^[A-Za-z ]+$/;
+            if (!nameRegex.test(name)) {
+                alert("Please enter a valid name (Letters only)");
+                return false;
+            }
 
-                    //phone validation
-                    let phoneRegex = /^[0-9]+$/;
-                    if (!phoneRegex.test(phone)){
-                        alert("Please enter a valid mobile number (Numbers only)");
-                        return false;
-                    }
+            //phone validation
+            let phoneRegex = /^[0-9]+$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Please enter a valid mobile number (Numbers only)");
+                return false;
+            }
 
-                    //Message validation 
-                    if (message.length < 10){
-                        alert("The message must be atleast 10 characters long");
-                        return false;
-                    }
+            //Message validation 
+            if (message.length < 10) {
+                alert("The message must be atleast 10 characters long");
+                return false;
+            }
 
-                    alert("Form Submitted Successfully !!!");
-                    return true;
-                }
-             </script>       
-      
+            alert("Form Submitted Successfully !!!");
+            return true;
+        }
+    </script>
 
 
-      <!-- Footer -->
-      <footer>
+
+    <!-- Footer -->
+    <footer>
         <p>&copy;Akhil Shetty M - 2025 My Website. All rights reserved.</p>
-      </footer>
-    
-    
+    </footer>
+
+
 </body>
+
 </html>
