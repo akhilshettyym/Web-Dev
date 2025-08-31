@@ -60,5 +60,5 @@ console.log(Math.floor(Math.random() * 10) + 1); // Random integer from 1 to 10
 const min = 10;
 const max = 100;
 
-console.log(Math.floor(Math.random() * (max - min + 1)) + min); 
+console.log(Math.floor(Math.random() * (max - min + 1)) + min);
 // Output: Random integer betwe

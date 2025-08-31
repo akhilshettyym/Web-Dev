@@ -1,6 +1,6 @@
 // String Basics
 
-const name = "Akhil"; 
+const name = "Akhil";
 const repoCount = 50;
 
 // String Concatenation using Template Literals (Recommended)
