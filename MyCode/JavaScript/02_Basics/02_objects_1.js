@@ -39,7 +39,7 @@ console.log(jsUser);
 
 // Adding Methods to Objects
 
-jsUser.greeting = function() {
+jsUser.greeting = function () {
     console.log("Hello, I am Akhil Shetty");
 };
 console.log(jsUser.greeting);  // Function reference (not execution)
@@ -49,7 +49,7 @@ jsUser.greeting();  // Output: "Hello, I am Akhil Shetty"
 
 
 // Using `this` keyword inside an object
-jsUser.greeting2 = function() {
+jsUser.greeting2 = function () {
     console.log(`Hello, I am ${this.name}`);
 };
 console.log(jsUser.greeting2);  // Function reference
