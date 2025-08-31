@@ -18,7 +18,7 @@ let isLoggedIn = false; // Boolean
 // ------------------------------------------------------------------
 
 // 1️ **Number** → Represents integers and floating-point numbers
-let userScore = 99.5; 
+let userScore = 99.5;
 console.log(typeof userScore); //  "number"
 
 // 2️ **BigInt** → Used for very large numbers beyond 2^53
