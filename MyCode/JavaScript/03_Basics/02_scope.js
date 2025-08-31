@@ -7,7 +7,7 @@ if (true) {
     let a = 10;    // This 'a' is a new variable that shadows the global 'a' inside this block.
     const b = 20;  // 'b' is block-scoped and only accessible inside this block.
     // var c = 30; // Using 'var' here would declare 'c' in function/global scope, not block-scoped.
-    
+
     console.log("Inner:", a); // Outputs 10 (refers to the block-scoped 'a')
 }
 
@@ -19,7 +19,6 @@ console.log(a); // Outputs 300 (global 'a')
 // console.log(c);
 
 
-
 // NESTED SCOPE (Lexical Scope)
 // Functions can access variables declared in their parent functions due to lexical scope.
 
@@ -28,10 +27,10 @@ function one() {
 
     function two() {  // Nested function
         const website = "YouTube";
-        console.log(username + " is on " + website); 
+        console.log(username + " is on " + website);
         // Can access 'username' from parent scope
     }
-    
+
     // console.log(website); // Error: 'website' is only accessible inside function two()
 
     two(); // Calling nested function
@@ -72,7 +71,7 @@ console.log(addOne(10)); // Outputs: 11
 
 // console.log(addTwo(5)); // Error: Cannot access 'addTwo' before initialization
 
-const addTwo = function(num) {  // Function expression assigned to a variable
+const addTwo = function (num) {  // Function expression assigned to a variable
     return num + 2;
 };
 

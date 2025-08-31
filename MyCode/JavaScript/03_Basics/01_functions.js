@@ -9,7 +9,7 @@ function sayMyName() {
 sayMyName();  // Function Execution
 
 // 2 Function with Parameters & Return Value
-function addTwoNumbers(num1, num2) {    
+function addTwoNumbers(num1, num2) {
     let result = num1 + num2;
     return result;
 }
@@ -24,7 +24,7 @@ console.log(loginUserMessage("Akhil"));  // Output: Akhil just logged in
 console.log(loginUserMessage());         // Output: Guest just logged in
 
 // 4 Rest Operator (...) - Handling Multiple Arguments
-function calculateCartPrice(...num1) {    
+function calculateCartPrice(...num1) {
     return num1;
 }
 console.log(calculateCartPrice(200, 400, 500));  // Output: [200, 400, 500]

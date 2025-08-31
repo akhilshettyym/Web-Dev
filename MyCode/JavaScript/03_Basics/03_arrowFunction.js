@@ -5,7 +5,7 @@ const user = {
     username: "Akhil",
     price: 999,
 
-    welcomeMessage: function(){
+    welcomeMessage: function () {
         console.log(`${this.username}, Welcome to the website`);
         console.log(this); // Refers to the current object
     }
