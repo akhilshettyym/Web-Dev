@@ -53,4 +53,4 @@ let score3 = 300;
 
 // Using `Array.of()` to create an array from multiple values
 console.log(Array.of(score1, score2, score3));
-// Output: [100, 200, 300]
+// Output: [100, 200, 300] 

@@ -55,4 +55,4 @@ jsUser.greeting2 = function () {
 console.log(jsUser.greeting2);  // Function reference
 
 // Calling the function
-jsUser.greet
+jsUser.greet 

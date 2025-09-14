@@ -13,7 +13,7 @@ const myArr2 = new Array(1, 2, 3, 4, 5, 6);
 console.log(myArr2); // Output: [1, 2, 3, 4, 5, 6]
 
 
-// Array Methods
+// Array Methods 
 
 const meList = [];
 meList.push("Akhil");  // Adds "Akhil" to the end
