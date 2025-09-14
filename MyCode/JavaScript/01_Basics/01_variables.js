@@ -8,7 +8,7 @@ let accountEmail = "akhilshettym2003@gmail.com";
 var accoundPassword = "123456";
 
 // Declaring a variable without using let/const/var (becomes global by default, which is bad practice)
-accountCity = "Jaipur";
+accountId = "Jaipur";
 
 // Declaring a variable without initializing it (default value will be undefined)
 let accountState;
