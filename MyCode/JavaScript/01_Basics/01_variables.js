@@ -19,7 +19,7 @@ let accountState;
 // Updating values of let and var variables (Allowed)
 accountEmail = "hc@hc.com";
 accoundPassword = "323232";
-accountCity = "Mangaluru";
+const accountCity = "Mangaluru";
 
 // Printing variables to console
 console.log(accountId); // 124353 (original value remains unchanged)
